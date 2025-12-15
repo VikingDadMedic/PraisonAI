@@ -1,0 +1,1366 @@
+.
+├── docker
+│   ├── call
+│   │   ├── Dockerfile
+│   │   └── README.md
+│   ├── docker-compose.dev.yml
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   ├── Dockerfile.chat
+│   ├── Dockerfile.dev
+│   ├── Dockerfile.praisonaiagents
+│   ├── Dockerfile.ui
+│   ├── quick-start.sh
+│   ├── README.md
+│   ├── services.yaml
+│   └── settings.yaml
+├── examples
+│   ├── cookbooks
+│   │   ├── Conversational_Chat_Agents
+│   │   │   ├── LangChain_PraisonAI_Agent_Notebook.ipynb
+│   │   │   ├── Multi_Agent_Production_System.ipynb
+│   │   │   ├── Phi_3_5_Mini_Conversational.ipynb
+│   │   │   ├── Phi_3_Medium_Conversational.ipynb
+│   │   │   ├── Phi_4_Conversational.ipynb
+│   │   │   ├── Qwen_Colab_Agent.ipynb
+│   │   │   ├── Qwen2_5_InstructionAgent.ipynb
+│   │   │   ├── ReAct_agent.ipynb
+│   │   │   ├── Semantic_Social_Network_Agent_System.ipynb
+│   │   │   └── TinyLlama_1_1B_model_SimpleAIAgent.ipynb
+│   │   ├── Ecommerce_Shopping_Agents
+│   │   │   └── Ai_Ecommerce_Shopping_Assistant.ipynb
+│   │   ├── Education_Learning_Agents
+│   │   │   ├── AI_Enrollment_Counselor.ipynb
+│   │   │   ├── Cognitive_Assistant_Agent_Team.ipynb
+│   │   │   └── Personalized_Learning_Assistant.ipynb
+│   │   ├── Finance_Market_Job_Agents
+│   │   │   ├── Ai_Job_Hunting_Assistant.ipynb
+│   │   │   ├── Ai_Market_Startup_Trend_Agent.ipynb
+│   │   │   ├── Financial_Coaching_Agent.ipynb
+│   │   │   └── Home_Buying_Real_Estate_Agent.ipynb
+│   │   ├── Government_Services_Agents
+│   │   │   └── Government-Services-Assistant.ipynb
+│   │   ├── Health_Fitness_Agents
+│   │   │   ├── Ai_Health_Fitness_Agent.ipynb
+│   │   │   └── Air_Quality_Analysis_Agent.ipynb
+│   │   ├── Productivity_Workflow_Agents
+│   │   │   ├── Cybersecurity_PoC_Agent.ipynb
+│   │   │   ├── Flow_Intelligent_Agent_PraisonAI.ipynb
+│   │   │   ├── Fuel_Emission_Agent_Intelligence_Agent.ipynb
+│   │   │   ├── Hackathon_Agent_Notebook.ipynb
+│   │   │   ├── Intelligent_Cognitive_Agent.ipynb
+│   │   │   ├── Predictive_Maintenance_Multi_Agent_Workflow.ipynb
+│   │   │   ├── Universal_Desktop_Agents.ipynb
+│   │   │   └── Work_Email_Agent.ipynb
+│   │   ├── Programming_Code_Analysis_Agents
+│   │   │   ├── Code_Analysis_Agent.ipynb
+│   │   │   ├── FunctionAgent_Workflow.ipynb
+│   │   │   ├── Game_Playing_Agent_Tic_Tac_Toe.ipynb
+│   │   │   ├── Gemma2B_Instruction_Agent.ipynb
+│   │   │   ├── Github_Repo_Analyzer_Agent.ipynb
+│   │   │   ├── Intelligent_Programming_Agent.ipynb
+│   │   │   ├── MistralTechAgent.ipynb
+│   │   │   ├── Natural_Language_Codebase.ipynb
+│   │   │   ├── Notion_Workspace_Assistant.ipynb
+│   │   │   ├── SearchAgent.ipynb
+│   │   │   └── ZeroScript_AI_TestExecutor.ipynb
+│   │   ├── rag_examples
+│   │   │   └── agentic_rag
+│   │   │       ├── agentic_rag_gpt5_praisonai_agents.ipynb
+│   │   │       └── PraisonAI_RecipeAgent.ipynb
+│   │   ├── Research_Knowledge_QA_Agents
+│   │   │   ├── AI_CourtSimulation.ipynb
+│   │   │   ├── AI_Data_Analysis_Agent.ipynb
+│   │   │   ├── Ai_Documentation_Processor.ipynb
+│   │   │   ├── ArXiv_agent_notebook_fixed.ipynb
+│   │   │   ├── Crypto_Research_Agent_Intelligence_Agent.ipynb
+│   │   │   ├── Domain_Deep_Research_Agent.ipynb
+│   │   │   ├── KnowledgeAgent_PraisonAI.ipynb
+│   │   │   ├── Local_RAG_Document_QA_Agent.ipynb
+│   │   │   ├── Praison_AI_Real_Estate_Chatbot.ipynb
+│   │   │   └── PraisonAI_QA_Automation_Copilot.ipynb
+│   │   ├── SocialMedia_Content_Agents
+│   │   │   ├── Ai_Meme_Creator_Agent.ipynb
+│   │   │   ├── DuckDuckGo_PraisonAI_Agent_Notebook.ipynb
+│   │   │   ├── Joke_Agent.ipynb
+│   │   │   ├── News_And_Podcast_Aggregator_Agent.ipynb
+│   │   │   ├── YouTube_Content_Integrity_Analyzer.ipynb
+│   │   │   └── YouTube_Influencer_Intelligence_Agent.ipynb
+│   │   ├── talk2find_voice_agent_demo.ipynb
+│   │   ├── Travel_Planning_Agents
+│   │   │   ├── Intelligent_Travel_Planning_Agent.ipynb
+│   │   │   └── VoiGno_Restaurant_Agent_PraisonAI.ipynb
+│   │   ├── Vision_Multimodal_Agents
+│   │   │   ├── Bert_Whisper_Agent.ipynb
+│   │   │   ├── DeepSeek_Qwen3_GRPO.ipynb
+│   │   │   ├── Groq_LPU_Powered_AI_Assistant.ipynb
+│   │   │   ├── LLaMA3_2_11B_Vision_Model.ipynb
+│   │   │   ├── Meta_LLaMA3_SyntheticData.ipynb
+│   │   │   ├── Phi_4_14B_GRPO.ipynb
+│   │   │   ├── Pixtral_12B_Vision_Model.ipynb
+│   │   │   ├── Qwen2_5_VL_7B_Vision_Model.ipynb
+│   │   │   └── Sesame_CSM_1B_TTS.ipynb
+│   │   └── yaml
+│   │       ├── article_generation_agents.ipynb
+│   │       ├── auto_email_responder_agents.ipynb
+│   │       ├── aws_bedrock_agents.yaml
+│   │       ├── book_writing_agents.ipynb
+│   │       ├── business_product_launch_agents.ipynb
+│   │       ├── cli_operation_agents.ipynb
+│   │       ├── comprehensive_research_report_agents.ipynb
+│   │       ├── email_workflow_management_agents.ipynb
+│   │       ├── game_development_agents.ipynb
+│   │       ├── instagram_post_agents.ipynb
+│   │       ├── job_candidate_evaluation.ipynb
+│   │       ├── job_hunt_agents.ipynb
+│   │       ├── job_posting_agents.ipynb
+│   │       ├── job_profile_matching_agents.ipynb
+│   │       ├── landing_page_generator_agents.ipynb
+│   │       ├── language_translator_agents.ipynb
+│   │       ├── markdown_validator_agents.ipynb
+│   │       ├── marketing_campaign_development_agents.ipynb
+│   │       ├── meeting_prep_and_strategy_agents.ipynb
+│   │       ├── meeting_prep_using_slack_and_trello_agents.ipynb
+│   │       ├── memory_management_and_knowledge_retreival_agents.ipynb
+│   │       ├── model_fee_retreival_agents.ipynb
+│   │       ├── movie_script_writer_agents.ipynb
+│   │       ├── news_retreival_rag_agents.ipynb
+│   │       ├── recruitment_flow_agents.ipynb
+│   │       ├── reddit_search_analysis_agents.ipynb
+│   │       ├── research_report_generation_agents.ipynb
+│   │       ├── research_through_azure_instance_agents.ipynb
+│   │       ├── screenplay_writer_agents.ipynb
+│   │       ├── secondary_market_research_agents.ipynb
+│   │       ├── secondary_market_research_agents.yaml
+│   │       ├── shakespearean_tweets_generation_agents.ipynb
+│   │       ├── stock_analysis_agents.ipynb
+│   │       ├── story_book_author_agents.ipynb
+│   │       ├── surprise_trip_planner_and_itinerary_agents.ipynb
+│   │       ├── trip_planner_agents.ipynb
+│   │       ├── wikipedia_search_analysis_agents.ipynb
+│   │       ├── you_search_analysis_agents.ipynb
+│   │       └── youtube_search_analysis_agents.ipynb
+│   ├── guardrail_example_fixed.py
+│   └── python
+│       ├── agents
+│       │   ├── autoagents-hierarchical-generation.py
+│       │   ├── code-agent.py
+│       │   ├── context-agent.py
+│       │   ├── data-analyst-agent.py
+│       │   ├── finance-agent.py
+│       │   ├── image-agent.py
+│       │   ├── image-to-text-agent.py
+│       │   ├── markdown-agent.py
+│       │   ├── math-agent.py
+│       │   ├── MULTI_PROVIDER_README.md
+│       │   ├── multi-provider-agent.py
+│       │   ├── planning-agent.py
+│       │   ├── programming-agent.py
+│       │   ├── recommendation-agent.py
+│       │   ├── research-agent.py
+│       │   ├── router-agent-cost-optimization.py
+│       │   ├── searxng-agent.py
+│       │   ├── shopping-agent.py
+│       │   ├── single-agent.py
+│       │   ├── video-agent.py
+│       │   ├── websearch-agent.py
+│       │   └── wikipedia-agent.py
+│       ├── api
+│       │   ├── mcp-sse.py
+│       │   ├── multi-agent-api.py
+│       │   ├── multi-agents-api.py
+│       │   ├── multi-agents-group-api.py
+│       │   ├── secondary-market-research-api.py
+│       │   ├── simple-api-mcp.py
+│       │   ├── simple-api.py
+│       │   ├── simple-mcp-multi-agents-server.py
+│       │   └── simple-mcp-server.py
+│       ├── camera
+│       │   ├── camera-basic.py
+│       │   ├── camera-continuous.py
+│       │   ├── camera-multi-agent.py
+│       │   ├── camera-video-analysis.py
+│       │   └── README.md
+│       ├── concepts
+│       │   ├── chat-with-pdf.py
+│       │   ├── context-engineering-workflow.py
+│       │   ├── CSV_PROCESSING_README.md
+│       │   ├── csv-processing-agents.py
+│       │   ├── knowledge-agents-task.py
+│       │   ├── knowledge-agents.py
+│       │   ├── knowledge-reranker-example.py
+│       │   ├── rag-agents.py
+│       │   ├── reasoning-extraction.py
+│       │   ├── repetitive-agents.py
+│       │   ├── routing-patterns.py
+│       │   ├── self-reflection-details.py
+│       │   ├── self-reflection-optimization-patterns.py
+│       │   ├── simple-csv-url-processor.py
+│       │   └── small.pdf
+│       ├── custom_tools
+│       │   ├── example_latency_tracking.py
+│       │   ├── hosted_server.py
+│       │   ├── latency_tracker_tool.py
+│       │   ├── mcp_server_latency_example.py
+│       │   ├── minimal_latency_example.py
+│       │   ├── README_LATENCY_TRACKING.md
+│       │   └── tools_with_latency.py
+│       ├── data
+│       │   └── cot-agents.py
+│       ├── general
+│       │   ├── advanced-callback-systems.py
+│       │   ├── async_example_full_multigroups.py
+│       │   ├── async_example_full.py
+│       │   ├── async_example.py
+│       │   ├── auto_agents_example.py
+│       │   ├── autonomous-agent.py
+│       │   ├── code_agents_example.py
+│       │   ├── evaluator-optimiser.py
+│       │   ├── example_callback.py
+│       │   ├── example_custom_tools.py
+│       │   ├── example_sequential.py
+│       │   ├── human_approval_example.py
+│       │   ├── langchain_example.py
+│       │   ├── memory_example.py
+│       │   ├── memory_simple.py
+│       │   ├── mini_agents_example.py
+│       │   ├── multimodal.py
+│       │   ├── orchestrator-workers.py
+│       │   ├── parallelisation.py
+│       │   ├── prompt_chaining.py
+│       │   ├── structured_agents_example.py
+│       │   ├── structured_response_example.py
+│       │   ├── tools_example.py
+│       │   ├── tools-class.py
+│       │   ├── workflow_example_basic.py
+│       │   └── workflow_example_detailed.py
+│       ├── guardrails
+│       │   ├── comprehensive-guardrails-example.py
+│       │   └── production-guardrails-patterns.py
+│       ├── handoff
+│       │   ├── handoff_advanced.py
+│       │   ├── handoff_basic.py
+│       │   ├── handoff_customer_service.py
+│       │   └── handoffs.md
+│       ├── image
+│       │   ├── image-agent-async.py
+│       │   └── image-agent.py
+│       ├── input
+│       │   ├── advanced_dynamic_input.py
+│       │   ├── environment_variable_input.py
+│       │   ├── medium_complexity_input.py
+│       │   ├── simple_input.py
+│       │   └── streamlit_ui_input.py
+│       ├── knowledge
+│       │   └── advanced-knowledge-management.py
+│       ├── mcp
+│       │   ├── airbnb-mcp.py
+│       │   ├── anthropic-mcp.py
+│       │   ├── aws-kb-retrieval-mcp.py
+│       │   ├── bravesearch-mcp.py
+│       │   ├── custom-python-client.py
+│       │   ├── custom-python-server.py
+│       │   ├── databutton-mcp.py
+│       │   ├── everart-mcp.py
+│       │   ├── fetch-mcp.py
+│       │   ├── filesystem-mcp.py
+│       │   ├── gdrive-mcp.py
+│       │   ├── gemini-mcp.py
+│       │   ├── git-mcp.py
+│       │   ├── github-mcp.py
+│       │   ├── gitlab-mcp.py
+│       │   ├── google-maps-mcp.py
+│       │   ├── groq-mcp.py
+│       │   ├── mcp-sse-weather.py
+│       │   ├── memory-mcp.py
+│       │   ├── mistral-mcp.py
+│       │   ├── ollama-python.py
+│       │   ├── ollama.py
+│       │   ├── openai-mcp.py
+│       │   ├── openrouter-mcp.py
+│       │   ├── perplexity-mcp.py
+│       │   ├── playwright-mcp.py
+│       │   ├── postgres-mcp.py
+│       │   ├── puppeteer-mcp.py
+│       │   ├── redis-mcp.py
+│       │   ├── sentry-mcp.py
+│       │   ├── sequential-thinking-mcp.py
+│       │   ├── slack-mcp.py
+│       │   ├── time-mcp.py
+│       │   ├── whatapp-groq-mcp.py
+│       │   ├── whatapp-mcp.py
+│       │   ├── whatapp-multi-agents-mcp.py
+│       │   ├── whatapp-ollama-mcp.py
+│       │   ├── whatsapp-mcp-ui.py
+│       │   └── xai-mcp.py
+│       ├── memory
+│       │   ├── advanced-graph-memory-integration.py
+│       │   ├── advanced-memory-search-optimization.py
+│       │   ├── gemini-embedding-example.py
+│       │   ├── gemini-embeddings.md
+│       │   ├── graph-knowledge-example.py
+│       │   └── graph-memory-agent.py
+│       ├── models
+│       │   ├── aws-bedrock.py
+│       │   ├── claude
+│       │   │   ├── claude_creative_designer_agent.py
+│       │   │   ├── claude_educational_tutor_agent.py
+│       │   │   ├── claude_financial_advisor_agent.py
+│       │   │   ├── claude_legal_advisor_agent.py
+│       │   │   └── claude_medical_researcher_agent.py
+│       │   ├── deepseek
+│       │   │   ├── deepseek-agents.py
+│       │   │   ├── deepseek-rag-agents-streamlit.py
+│       │   │   └── deepseek-rag-agents.py
+│       │   ├── googlegemini
+│       │   │   ├── any-llm-agents-advanced.py
+│       │   │   ├── any-llm-agents-async.py
+│       │   │   ├── any-llm-agents.py
+│       │   │   ├── gemini-code-execution.py
+│       │   │   ├── gemini-google-search.py
+│       │   │   ├── gemini-internal-tools-combined.py
+│       │   │   ├── gemini-url-context.py
+│       │   │   └── README_GEMINI_INTERNAL_TOOLS.md
+│       │   ├── gpt
+│       │   │   ├── gpt_cybersecurity_agent.py
+│       │   │   ├── gpt_data_engineer_agent.py
+│       │   │   ├── gpt_marketing_strategist_agent.py
+│       │   │   ├── gpt_product_manager_agent.py
+│       │   │   └── gpt_software_architect_agent.py
+│       │   ├── grok
+│       │   │   ├── grok_ai_competitor_intelligence_agent.py
+│       │   │   ├── grok_ai_finance_agent.py
+│       │   │   ├── grok_ai_game_design_agent.py
+│       │   │   ├── grok_ai_legal_agent.py
+│       │   │   ├── grok_ai_recruitment_agent.py
+│       │   │   ├── grok_ai_services_agency.py
+│       │   │   ├── grok_ai_teaching_agent.py
+│       │   │   ├── grok_basic_example.py
+│       │   │   ├── grok_customer_support_chatbot.py
+│       │   │   ├── grok_data_analysis_agent.py
+│       │   │   ├── grok_deep_research_agent.py
+│       │   │   ├── grok_health_fitness_agent.py
+│       │   │   ├── grok_investment_advisor_agent.py
+│       │   │   ├── grok_journalist_agent.py
+│       │   │   ├── grok_lead_generation_assistant.py
+│       │   │   ├── grok_medical_imaging_agent.py
+│       │   │   ├── grok_meeting_productivity_agent.py
+│       │   │   ├── grok_mental_wellbeing_advisor.py
+│       │   │   ├── grok_multi_mcp_agent.py
+│       │   │   ├── grok_multimodal_coding_agent.py
+│       │   │   ├── grok_multimodal_design_agent.py
+│       │   │   ├── grok_multimodal_reasoning_agent.py
+│       │   │   ├── grok_music_generator_agent.py
+│       │   │   ├── grok_personal_finance_agent.py
+│       │   │   ├── grok_startup_trend_analysis_agent.py
+│       │   │   └── grok_travel_planning_agent.py
+│       │   ├── groq
+│       │   │   ├── groq_crisis_management_communication_agent.py
+│       │   │   ├── groq_digital_marketing_seo_optimization_agent.py
+│       │   │   ├── groq_environmental_impact_assessment_agent.py
+│       │   │   ├── groq_event_planning_management_agent.py
+│       │   │   ├── groq_healthcare_medical_research_agent.py
+│       │   │   ├── groq_language_learning_translation_agent.py
+│       │   │   ├── groq_patent_research_innovation_agent.py
+│       │   │   ├── groq_personal_branding_pr_agent.py
+│       │   │   ├── groq_product_development_innovation_agent.py
+│       │   │   └── groq_supply_chain_optimization_agent.py
+│       │   ├── kimi
+│       │   │   ├── kimi_aerospace_engineering_agent.py
+│       │   │   ├── kimi_audio_tour_agent.py
+│       │   │   ├── kimi_bioinformatics_genomics_agent.py
+│       │   │   ├── kimi_blockchain_defi_agent.py
+│       │   │   ├── kimi_chess_agent.py
+│       │   │   ├── kimi_creative_writing_agent.py
+│       │   │   ├── kimi_cybersecurity_agent.py
+│       │   │   ├── kimi_data_visualization_agent.py
+│       │   │   ├── kimi_energy_renewables_agent.py
+│       │   │   ├── kimi_game_development_agent.py
+│       │   │   ├── kimi_iot_smart_cities_agent.py
+│       │   │   ├── kimi_metaverse_vr_agent.py
+│       │   │   ├── kimi_nanotechnology_materials_agent.py
+│       │   │   ├── kimi_quantum_ai_agent.py
+│       │   │   ├── kimi_quantum_computing_agent.py
+│       │   │   ├── kimi_robotics_automation_agent.py
+│       │   │   ├── kimi_self_evolving_agent.py
+│       │   │   ├── kimi_startup_insight_agent.py
+│       │   │   ├── kimi_system_architect_agent.py
+│       │   │   └── kimi_web_scraper_agent.py
+│       │   └── llama
+│       │       ├── llama_business_analyst_agent.py
+│       │       ├── llama_code_review_agent.py
+│       │       ├── llama_content_writer_agent.py
+│       │       ├── llama_data_science_agent.py
+│       │       └── llama_research_assistant_agent.py
+│       ├── mongodb
+│       │   ├── llms.md
+│       │   ├── mongodb_comprehensive_example.py
+│       │   ├── mongodb_knowledge_example.py
+│       │   ├── mongodb_memory_example.py
+│       │   ├── mongodb_tools_example.py
+│       │   └── README.md
+│       ├── monitoring
+│       │   ├── 02_multi_agent_workflow_monitoring.py
+│       │   ├── 03_agent_with_tools_monitoring.py
+│       │   ├── 04_async_agent_monitoring.py
+│       │   ├── 05_error_handling_monitoring.py
+│       │   ├── 06_memory_agent_monitoring.py
+│       │   ├── 07_hierarchical_agents_monitoring.py
+│       │   ├── 08_custom_tools_monitoring.py
+│       │   ├── 09_streaming_monitoring.py
+│       │   ├── 10_comprehensive_dashboard.py
+│       │   └── README.md
+│       ├── performance_monitoring_demo.py
+│       ├── processes
+│       │   ├── advanced-workflow-patterns.py
+│       │   └── hierarchical-process-example.py
+│       ├── providers
+│       │   ├── ai21
+│       │   │   └── ai21_example.py
+│       │   ├── anthropic
+│       │   │   └── anthropic_claude_example.py
+│       │   ├── aws
+│       │   │   └── aws_bedrock_example.py
+│       │   ├── azure
+│       │   │   └── azure_openai_example.py
+│       │   ├── cloudflare
+│       │   │   └── cloudflare_example.py
+│       │   ├── cohere
+│       │   │   └── cohere_example.py
+│       │   ├── databricks
+│       │   │   └── databricks_example.py
+│       │   ├── deepseek
+│       │   │   └── deepseek_example.py
+│       │   ├── fireworks
+│       │   │   └── fireworks_example.py
+│       │   ├── google
+│       │   │   └── google_gemini_example.py
+│       │   ├── groq
+│       │   │   └── kimi_with_groq_example.py
+│       │   ├── huggingface
+│       │   │   └── huggingface_example.py
+│       │   ├── mistral
+│       │   │   └── mistral_example.py
+│       │   ├── moonshot
+│       │   │   └── moonshot_example.py
+│       │   ├── ollama
+│       │   │   ├── ollama-agents.py
+│       │   │   └── ollama-base-url-example.py
+│       │   ├── openai
+│       │   │   └── openai_gpt4_example.py
+│       │   ├── openrouter
+│       │   │   └── openrouter_example.py
+│       │   ├── perplexity
+│       │   │   └── perplexity_example.py
+│       │   ├── replicate
+│       │   │   └── replicate_example.py
+│       │   ├── sagemaker
+│       │   │   └── sagemaker_example.py
+│       │   ├── together
+│       │   │   └── together_ai_example.py
+│       │   ├── vertex
+│       │   │   └── vertex_example.py
+│       │   ├── vllm
+│       │   │   └── vllm_example.py
+│       │   └── xai
+│       │       └── xai_grok_example.py
+│       ├── remote
+│       │   ├── README.md
+│       │   ├── remote_agent_example.py
+│       │   └── remote_agent_server.py
+│       ├── session
+│       │   └── SESSION_MEMORY_FIX_REVIEW.md
+│       ├── sessions
+│       │   └── comprehensive-session-management.py
+│       ├── stateful
+│       │   ├── 01_basic_state_management.py
+│       │   ├── 02_state_in_tool_functions.py
+│       │   ├── 03_conditional_task_execution.py
+│       │   ├── 04_session_state_persistence.py
+│       │   ├── 05_loop_control_with_state.py
+│       │   ├── 06_advanced_state_operations.py
+│       │   ├── advanced-state-management-patterns.py
+│       │   ├── memory-quality-example.py
+│       │   ├── README.md
+│       │   ├── session-example.py
+│       │   └── workflow-state-example.py
+│       ├── tasks
+│       │   └── advanced-task-management.py
+│       ├── telemetry
+│       │   └── production-telemetry-example.py
+│       ├── token-metrics
+│       │   ├── 01_basic_token_tracking.py
+│       │   ├── 02_session_metrics.py
+│       │   ├── 03_cost_estimation.py
+│       │   ├── 04_telemetry_integration.py
+│       │   ├── 05_advanced_agent_integration.py
+│       │   └── README.md
+│       ├── tools
+│       │   ├── cli
+│       │   │   └── app.py
+│       │   ├── e2b
+│       │   │   ├── agents.yaml
+│       │   │   ├── app.py
+│       │   │   ├── single_agent.py
+│       │   │   └── tools.py
+│       │   ├── exa-tool
+│       │   │   ├── Finance_Market_Job_Agents
+│       │   │   │   └── Financial_Coaching_Agent.py
+│       │   │   ├── Flow_Intelligent_Agent_PraisonAI.py
+│       │   │   ├── github_repo_analyzer_agent.py
+│       │   │   ├── Health_Fitness_Agents
+│       │   │   │   └── Air_Quality_Analysis_Agent.py
+│       │   │   ├── learning_assistant.py
+│       │   │   ├── personalized_learning_assistant.py
+│       │   │   ├── Programming_Code_Analysis_Agents
+│       │   │   │   └── Game_Playing_Agent_Tic_Tac_Toe.py
+│       │   │   ├── rag_examples
+│       │   │   │   ├── agentic_rag
+│       │   │   │   │   └── rag_agent.py
+│       │   │   │   └── agentic_rag_gpt5
+│       │   │   │       ├── agentic_rag_gpt5.py
+│       │   │   │       └── README.md
+│       │   │   ├── Research_Knowledge_QA_Agents
+│       │   │   │   └── Domain_Deep_Research_Agent.py
+│       │   │   └── SocialMedia_Content_Agents
+│       │   │       └── News_And_Podcast_Aggregator_Agent.py
+│       │   ├── langchain
+│       │   │   ├── agentql-toolkit.py
+│       │   │   ├── azure-code-interpreter.py
+│       │   │   ├── bearly-code-interpreter.py
+│       │   │   ├── brave-search.py
+│       │   │   ├── duckduckgo-search.py
+│       │   │   ├── exa-search.py
+│       │   │   ├── google-search.py
+│       │   │   ├── google-serper-search.py
+│       │   │   ├── google-trends.py
+│       │   │   ├── jina-code-interpreter.py
+│       │   │   ├── jina-search.py
+│       │   │   ├── searchapi-search.py
+│       │   │   ├── serp-api.py
+│       │   │   ├── serp-search.py
+│       │   │   ├── tavily-search.py
+│       │   │   ├── wikipedia-search.py
+│       │   │   └── you-search.py
+│       │   ├── searxng
+│       │   │   └── searxng-search.py
+│       │   └── trafilatura
+│       │       ├── custom_trafilatura_tools.py
+│       │       └── trafilatura_example.py
+│       ├── ui
+│       │   ├── gemini-streamlit.py
+│       │   ├── gradio-agents.py
+│       │   ├── mcp-streamlit-airbnb.py
+│       │   ├── mcp-streamlit-simple.py
+│       │   ├── ollama-rag-agents-streamlit.py
+│       │   └── streamlit-agents.py
+│       └── usecases
+│           ├── adaptive-learning.py
+│           ├── analysis
+│           │   ├── code-analysis-agents.py
+│           │   ├── code-analysis-streamlit.py
+│           │   ├── cv-analysis.py
+│           │   ├── hackathon-judge-agent.py
+│           │   ├── hackathon-judge-streamlit.py
+│           │   └── presentation.mp4
+│           ├── climate-impact.py
+│           ├── code-review.py
+│           ├── crypto-validator.py
+│           ├── customer-service.py
+│           ├── defi-market-maker.py
+│           ├── disaster-recovery.py
+│           ├── domain-context-solution.py
+│           ├── emergency-response.py
+│           ├── fraud-detection.py
+│           ├── healthcare-diagnosis.py
+│           ├── medicine-protocol.py
+│           ├── multilingual-content.py
+│           ├── neural-architecture.py
+│           ├── predictive-maintenance.py
+│           ├── quantum-optimiser.py
+│           ├── README-domain-context.md
+│           ├── README-secondary-market-research.md
+│           ├── research-assistant.py
+│           ├── secondary-market-research.py
+│           ├── smart-city.py
+│           ├── space-mission.py
+│           ├── supply-chain.py
+│           └── vulnerability-detection.py
+├── LICENSE
+├── README.md
+├── src
+│   ├── praisonai
+│   │   ├── agents-advanced.yaml
+│   │   ├── agents.yaml
+│   │   ├── api.py
+│   │   ├── config.yaml
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── poetry.lock
+│   │   ├── praisonai
+│   │   │   ├── __init__.py
+│   │   │   ├── __main__.py
+│   │   │   ├── agents_generator.py
+│   │   │   ├── api
+│   │   │   │   └── call.py
+│   │   │   ├── auto.py
+│   │   │   ├── chainlit_ui.py
+│   │   │   ├── cli.py
+│   │   │   ├── deploy.py
+│   │   │   ├── inbuilt_tools
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── autogen_tools.py
+│   │   │   ├── inc
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── config.py
+│   │   │   │   └── models.py
+│   │   │   ├── public
+│   │   │   │   ├── android-chrome-192x192.png
+│   │   │   │   ├── android-chrome-512x512.png
+│   │   │   │   ├── apple-touch-icon.png
+│   │   │   │   ├── fantasy.svg
+│   │   │   │   ├── favicon-16x16.png
+│   │   │   │   ├── favicon-32x32.png
+│   │   │   │   ├── favicon.ico
+│   │   │   │   ├── game.svg
+│   │   │   │   ├── logo_dark.png
+│   │   │   │   ├── logo_light.png
+│   │   │   │   ├── movie.svg
+│   │   │   │   ├── praison-ai-agents-architecture-dark.png
+│   │   │   │   ├── praison-ai-agents-architecture.png
+│   │   │   │   └── thriller.svg
+│   │   │   ├── README.md
+│   │   │   ├── scheduler.py
+│   │   │   ├── setup
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── build.py
+│   │   │   │   ├── config.yaml
+│   │   │   │   ├── post_install.py
+│   │   │   │   ├── setup_conda_env.py
+│   │   │   │   └── setup_conda_env.sh
+│   │   │   ├── setup.py
+│   │   │   ├── test.py
+│   │   │   ├── train_vision.py
+│   │   │   ├── train.py
+│   │   │   ├── ui
+│   │   │   │   ├── agents.py
+│   │   │   │   ├── callbacks.py
+│   │   │   │   ├── chat.py
+│   │   │   │   ├── code.py
+│   │   │   │   ├── colab_chainlit.py
+│   │   │   │   ├── colab.py
+│   │   │   │   ├── components
+│   │   │   │   │   └── aicoder.py
+│   │   │   │   ├── config
+│   │   │   │   │   ├── chainlit.md
+│   │   │   │   │   └── translations
+│   │   │   │   │       ├── bn.json
+│   │   │   │   │       ├── en-US.json
+│   │   │   │   │       ├── gu.json
+│   │   │   │   │       ├── he-IL.json
+│   │   │   │   │       ├── hi.json
+│   │   │   │   │       ├── kn.json
+│   │   │   │   │       ├── ml.json
+│   │   │   │   │       ├── mr.json
+│   │   │   │   │       ├── ta.json
+│   │   │   │   │       ├── te.json
+│   │   │   │   │       └── zh-CN.json
+│   │   │   │   ├── context.py
+│   │   │   │   ├── database_config.py
+│   │   │   │   ├── db.py
+│   │   │   │   ├── public
+│   │   │   │   │   ├── fantasy.svg
+│   │   │   │   │   ├── game.svg
+│   │   │   │   │   ├── logo_dark.png
+│   │   │   │   │   ├── logo_light.png
+│   │   │   │   │   ├── movie.svg
+│   │   │   │   │   ├── praison.css
+│   │   │   │   │   └── thriller.svg
+│   │   │   │   ├── README.md
+│   │   │   │   ├── realtime.py
+│   │   │   │   ├── realtimeclient
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── tools.py
+│   │   │   │   ├── sql_alchemy.py
+│   │   │   │   └── tools.md
+│   │   │   ├── upload_vision.py
+│   │   │   └── version.py
+│   │   ├── praisonai.rb
+│   │   ├── pyproject.toml
+│   │   ├── pytest.ini
+│   │   ├── README.md
+│   │   ├── requirements.txt
+│   │   ├── schedule_config.yaml.example
+│   │   ├── scripts
+│   │   │   ├── bump_and_release.py
+│   │   │   ├── bump_version.py
+│   │   │   └── release.py
+│   │   ├── setup.sh
+│   │   ├── tests
+│   │   │   ├── __init__.py
+│   │   │   ├── advanced_example.py
+│   │   │   ├── agents-advanced.yaml
+│   │   │   ├── agents.yaml
+│   │   │   ├── auto_example.py
+│   │   │   ├── autogen-agents.yaml
+│   │   │   ├── basic_example.py
+│   │   │   ├── cl-test.py
+│   │   │   ├── CLAUDE_CODE_INTEGRATION_PRAISONAI_AGENTS.md
+│   │   │   ├── conftest.py
+│   │   │   ├── crewai-agents.yaml
+│   │   │   ├── debug.py
+│   │   │   ├── e2e
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── autogen
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── test_autogen_real.py
+│   │   │   │   ├── crewai
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── test_crewai_real.py
+│   │   │   │   └── README.md
+│   │   │   ├── inbuilt-tool-agents.yaml
+│   │   │   ├── integration
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── autogen
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── test_autogen_basic.py
+│   │   │   │   ├── crewai
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── test_crewai_basic.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── test_base_url_api_base_fix.py
+│   │   │   │   ├── test_mcp_integration.py
+│   │   │   │   ├── test_rag_integration.py
+│   │   │   │   └── WORKFLOW_INTEGRATION.md
+│   │   │   ├── README.md
+│   │   │   ├── search-tool-agents.yaml
+│   │   │   ├── simple_test_runner.py
+│   │   │   ├── source
+│   │   │   │   ├── autogen_function_tools.py
+│   │   │   │   ├── autogen_langchain_tools.py
+│   │   │   │   ├── crewai_tools.py
+│   │   │   │   └── radius.txt
+│   │   │   ├── test_agents_playbook.py
+│   │   │   ├── test_basic.py
+│   │   │   ├── test_custom_tools_fix.py
+│   │   │   ├── test_double_api_fix.py
+│   │   │   ├── test_phase2_refactor.py
+│   │   │   ├── test_runner.py
+│   │   │   ├── test.py
+│   │   │   ├── TESTING_GUIDE.md
+│   │   │   ├── tools
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── internet_search.py
+│   │   │   ├── unit
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── agent
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── test_mini_agents_fix.py
+│   │   │   │   │   ├── test_mini_agents_sequential.py
+│   │   │   │   │   └── test_type_casting.py
+│   │   │   │   ├── test_agent_refactor.py
+│   │   │   │   ├── test_approval_agent_integration.py
+│   │   │   │   ├── test_approval_basic.py
+│   │   │   │   ├── test_approval_interactive.py
+│   │   │   │   ├── test_async_agents.py
+│   │   │   │   ├── test_async_gemini_fix.py
+│   │   │   │   ├── test_async_tool_formats.py
+│   │   │   │   ├── test_autoagents.py
+│   │   │   │   ├── test_claude_code_integration.py
+│   │   │   │   ├── test_comprehensive_import.py
+│   │   │   │   ├── test_context_management.py
+│   │   │   │   ├── test_core_agents.py
+│   │   │   │   ├── test_database_config.py
+│   │   │   │   ├── test_decorator_enforcement.py
+│   │   │   │   ├── test_decorator_simple.py
+│   │   │   │   ├── test_gemini_tool_choice.py
+│   │   │   │   ├── test_graph_memory.py
+│   │   │   │   ├── test_memory_import.py
+│   │   │   │   ├── test_ollama_fix.py
+│   │   │   │   ├── test_openai_refactor_2.py
+│   │   │   │   ├── test_openai_refactor.py
+│   │   │   │   ├── test_query_rewriter_cli.py
+│   │   │   │   ├── test_remote_agent.py
+│   │   │   │   ├── test_scheduler.py
+│   │   │   │   ├── test_session_import.py
+│   │   │   │   ├── test_tool_fix_documentation.md
+│   │   │   │   ├── test_tool_fix_example.py
+│   │   │   │   ├── test_tool_fix_improved.py
+│   │   │   │   ├── test_tools_and_ui.py
+│   │   │   │   ├── test_validation_feedback.py
+│   │   │   │   └── test_xai_fix.py
+│   │   │   └── yaml_example.py
+│   │   ├── tools.py
+│   │   └── uv.lock
+│   ├── praisonai-agents
+│   │   ├── 01_basic_agent_with_monitoring.py
+│   │   ├── 01_basic_token_tracking.py
+│   │   ├── 02_multi_agent_workflow_monitoring.py
+│   │   ├── 03_agent_with_tools_monitoring.py
+│   │   ├── 04_async_agent_monitoring.py
+│   │   ├── 05_error_handling_monitoring.py
+│   │   ├── 06_memory_agent_monitoring.py
+│   │   ├── 07_hierarchical_agents_monitoring.py
+│   │   ├── 08_custom_tools_monitoring.py
+│   │   ├── 09_streaming_monitoring.py
+│   │   ├── 10_comprehensive_dashboard.py
+│   │   ├── agent_guardrails_example.py
+│   │   ├── agentic_parallelisation.py
+│   │   ├── any-llm-agents-async.py
+│   │   ├── async-tavily-agents-gemini.py
+│   │   ├── auto_langtrace.py
+│   │   ├── autoagents-tavily.py
+│   │   ├── basic-agents-fixed.py
+│   │   ├── basic-agents-tools.py
+│   │   ├── check_syntax.py
+│   │   ├── CLAUDE.md
+│   │   ├── context_basic.py
+│   │   ├── debug_auto_instrument.py
+│   │   ├── debug_comparison.py
+│   │   ├── debug_telemetry_double.py
+│   │   ├── debug_telemetry.py
+│   │   ├── deepresearch_gemini.py
+│   │   ├── deepresearch_openai.py
+│   │   ├── examples
+│   │   │   └── plugin_template
+│   │   │       ├── pyproject.toml
+│   │   │       ├── README.md
+│   │   │       └── src
+│   │   │           └── praisonai_example_plugin
+│   │   │               └── __init__.py
+│   │   ├── fix_notebook.py
+│   │   ├── gemini_self_reflection.py
+│   │   ├── gemini-agents-tools.py
+│   │   ├── gemini-basic.py
+│   │   ├── gemini-internal-tools.py
+│   │   ├── gemini-sequential.py
+│   │   ├── gemini-structured.py
+│   │   ├── guardrail_agent_example.py
+│   │   ├── guardrail_agents_example.py
+│   │   ├── guardrails_example.py
+│   │   ├── handoff-test.py
+│   │   ├── langchain_example.py
+│   │   ├── LLM_OPTIMIZATION_SUMMARY.md
+│   │   ├── llm-gemini-advanced.py
+│   │   ├── llms.md
+│   │   ├── mcp-agents.py
+│   │   ├── mongodb_comprehensive_example.py
+│   │   ├── mongodb_knowledge_basic.py
+│   │   ├── mongodb_knowledge_example.py
+│   │   ├── mongodb_memory_basic.py
+│   │   ├── mongodb_memory_example.py
+│   │   ├── mongodb_tools_example.py
+│   │   ├── multi-agents-api.py
+│   │   ├── ollama-agents.py
+│   │   ├── ollama-sequential.py
+│   │   ├── OPENAI_CLIENT_OPTIMIZATION_SUMMARY.md
+│   │   ├── openai-basic.py
+│   │   ├── openai-multiturn.py
+│   │   ├── openai-run.py
+│   │   ├── openai-sequential.py
+│   │   ├── OPTIMIZATION_SUMMARY.md
+│   │   ├── performance_monitoring_demo.py
+│   │   ├── praisonai-gemini.py
+│   │   ├── praisonai-openai.py
+│   │   ├── praisonaiagents
+│   │   │   ├── __init__.py
+│   │   │   ├── _logging.py
+│   │   │   ├── _warning_patch.py
+│   │   │   ├── agent
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── agent.py
+│   │   │   │   ├── context_agent.py
+│   │   │   │   ├── deep_research_agent.py
+│   │   │   │   ├── handoff.py
+│   │   │   │   ├── image_agent.py
+│   │   │   │   ├── prompt_expander_agent.py
+│   │   │   │   ├── query_rewriter_agent.py
+│   │   │   │   └── router_agent.py
+│   │   │   ├── agents
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── agents.py
+│   │   │   │   └── autoagents.py
+│   │   │   ├── approval.py
+│   │   │   ├── flow_display.py
+│   │   │   ├── guardrails
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── guardrail_result.py
+│   │   │   │   └── llm_guardrail.py
+│   │   │   ├── knowledge
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── chunking.py
+│   │   │   │   └── knowledge.py
+│   │   │   ├── llm
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── llm.py
+│   │   │   │   ├── model_capabilities.py
+│   │   │   │   ├── model_router.py
+│   │   │   │   └── openai_client.py
+│   │   │   ├── main.py
+│   │   │   ├── mcp
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── mcp_http_stream.py
+│   │   │   │   ├── mcp_sse.py
+│   │   │   │   └── mcp.py
+│   │   │   ├── memory
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── memory.py
+│   │   │   ├── process
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── process.py
+│   │   │   ├── session.py
+│   │   │   ├── task
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── task.py
+│   │   │   ├── telemetry
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── integration.py
+│   │   │   │   ├── performance_cli.py
+│   │   │   │   ├── PERFORMANCE_IMPACT.md
+│   │   │   │   ├── performance_monitor.py
+│   │   │   │   ├── performance_utils.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── telemetry.py
+│   │   │   │   ├── token_collector.py
+│   │   │   │   └── token_telemetry.py
+│   │   │   └── tools
+│   │   │       ├── __init__.py
+│   │   │       ├── arxiv_tools.py
+│   │   │       ├── base.py
+│   │   │       ├── calculator_tools.py
+│   │   │       ├── csv_tools.py
+│   │   │       ├── decorator.py
+│   │   │       ├── duckdb_tools.py
+│   │   │       ├── duckduckgo_tools.py
+│   │   │       ├── example_plugin.py
+│   │   │       ├── excel_tools.py
+│   │   │       ├── file_tools.py
+│   │   │       ├── json_tools.py
+│   │   │       ├── mongodb_tools.py
+│   │   │       ├── newspaper_tools.py
+│   │   │       ├── pandas_tools.py
+│   │   │       ├── python_tools.py
+│   │   │       ├── README.md
+│   │   │       ├── registry.py
+│   │   │       ├── searxng_tools.py
+│   │   │       ├── shell_tools.py
+│   │   │       ├── spider_tools.py
+│   │   │       ├── test.py
+│   │   │       ├── tools.py
+│   │   │       ├── train
+│   │   │       │   └── data
+│   │   │       │       └── generatecot.py
+│   │   │       ├── wikipedia_tools.py
+│   │   │       ├── xml_tools.py
+│   │   │       ├── yaml_tools.py
+│   │   │       └── yfinance_tools.py
+│   │   ├── pyproject.toml
+│   │   ├── query_rewriter_example.py
+│   │   ├── README.md
+│   │   ├── realtime-streaming.py
+│   │   ├── reproduce_issue_878_simple.py
+│   │   ├── requirements.txt
+│   │   ├── run_with_langtrace.py
+│   │   ├── sequence_llm.py
+│   │   ├── sequence.py
+│   │   ├── session_memory.py
+│   │   ├── simple_guardrail_test.py
+│   │   ├── simple_test.py
+│   │   ├── simple-api-mcp.py
+│   │   ├── simple-mcp-server.py
+│   │   ├── streaming-gemini.py
+│   │   ├── streaming-openai.py
+│   │   ├── syntax_check.py
+│   │   ├── telemetry_analysis.md
+│   │   ├── telemetry_example.py
+│   │   ├── telemetry_minimal.py
+│   │   ├── TELEMETRY_SUMMARY.md
+│   │   ├── test_agent_guardrails.py
+│   │   ├── test_agent_simple.py
+│   │   ├── test_all_optimizations.py
+│   │   ├── test_async_sequential.py
+│   │   ├── test_auto_telemetry_final.py
+│   │   ├── test_autoagents_hierarchical_fix.py
+│   │   ├── test_backward_compatibility.py
+│   │   ├── test_both_formats.py
+│   │   ├── test_callback_enhancement.py
+│   │   ├── test_callback_fix_verification.py
+│   │   ├── test_callback_fix.py
+│   │   ├── test_callback_simple.py
+│   │   ├── test_debug_fixed.py
+│   │   ├── test_debug_mode.py
+│   │   ├── test_duplicate_callback_fix.py
+│   │   ├── test_final_fix.py
+│   │   ├── test_fix_simple.py
+│   │   ├── test_fix_verification.py
+│   │   ├── test_fix.py
+│   │   ├── test_flow_display.py
+│   │   ├── test_gemini_embedding.py
+│   │   ├── test_guardrail_return_types.py
+│   │   ├── test_guardrails.py
+│   │   ├── test_import_conversion.py
+│   │   ├── test_import_debug.py
+│   │   ├── test_import_debug2.py
+│   │   ├── test_import_order.py
+│   │   ├── test_import.py
+│   │   ├── test_issue_877.py
+│   │   ├── test_issue_896_demo.py
+│   │   ├── test_issue_947.py
+│   │   ├── test_issue_950.py
+│   │   ├── test_langtrace.py
+│   │   ├── test_litellm_telemetry.py
+│   │   ├── test_manager_llm_fix.py
+│   │   ├── test_manual_instrumentation.py
+│   │   ├── test_mongodb_direct.py
+│   │   ├── test_mongodb_integration.py
+│   │   ├── test_mongodb_isolated.py
+│   │   ├── test_multi_provider.py
+│   │   ├── test_ollama_fix.py
+│   │   ├── test_ollama_logic.py
+│   │   ├── test_ollama_sequential_fix.py
+│   │   ├── test_optimization_verification.py
+│   │   ├── test_performance_metrics.py
+│   │   ├── test_posthog_detailed.py
+│   │   ├── test_posthog_direct.py
+│   │   ├── test_posthog_error.py
+│   │   ├── test_posthog_import.py
+│   │   ├── test_posthog.py
+│   │   ├── test_real_streaming.py
+│   │   ├── test_self_reflection_fix.py
+│   │   ├── test_self_reflection_with_tools_verification.py
+│   │   ├── test_self_reflection_with_tools.py
+│   │   ├── test_self_reflection.py
+│   │   ├── test_sequential_fix.py
+│   │   ├── test_sequential_tool_calling.py
+│   │   ├── test_simple_fix.py
+│   │   ├── test_simple.py
+│   │   ├── test_stream_parameter_fix.py
+│   │   ├── test_streaming_basic.py
+│   │   ├── test_streaming_behavior.py
+│   │   ├── test_streaming_display_fix.py
+│   │   ├── test_streaming_fix.py
+│   │   ├── test_streaming_logic.py
+│   │   ├── test_streaming_telemetry_fix.py
+│   │   ├── test_streaming.py
+│   │   ├── test_syntax_check.py
+│   │   ├── test_syntax.py
+│   │   ├── test_task_name_fix.py
+│   │   ├── test_telemetry_automatic.py
+│   │   ├── test_telemetry_disabled.py
+│   │   ├── test_telemetry_fix.py
+│   │   ├── test_telemetry_integration.py
+│   │   ├── test_telemetry_performance.py
+│   │   ├── test_telemetry_simple.py
+│   │   ├── test_termination_issue.py
+│   │   ├── test_token_tracking_fix.py
+│   │   ├── test_user_code_pattern.py
+│   │   ├── test_user_example.py
+│   │   ├── test_validation_feedback.py
+│   │   ├── test_verbose_stream_combinations.py
+│   │   ├── test_warnings.py
+│   │   ├── test.py
+│   │   ├── tests
+│   │   │   ├── any-llm-agents-async.py
+│   │   │   ├── async_example_full_multigroups.py
+│   │   │   ├── async_example_full.py
+│   │   │   ├── async_example.py
+│   │   │   ├── async-tavily-agents-gemini.py
+│   │   │   ├── async-tavily-agents.py
+│   │   │   ├── auto_agents_example.py
+│   │   │   ├── autonomous-agent.py
+│   │   │   ├── basic-agents-simple-token-demo.py
+│   │   │   ├── basic-agents.py
+│   │   │   ├── chunking-direct-test.py
+│   │   │   ├── code_agents_example.py
+│   │   │   ├── code_review.py
+│   │   │   ├── code-analysis-agents.py
+│   │   │   ├── code-analysis-streamlit.py
+│   │   │   ├── context-agents-code.py
+│   │   │   ├── context-agents.py
+│   │   │   ├── context-multi-tasks.py
+│   │   │   ├── cot-agents-batch.py
+│   │   │   ├── cot-agents.py
+│   │   │   ├── crewai-tools-example.py
+│   │   │   ├── cv.txt
+│   │   │   ├── data-analyst-agent.py
+│   │   │   ├── deep_research_example.py
+│   │   │   ├── deep_research_test.py
+│   │   │   ├── deepseek-agents.py
+│   │   │   ├── deepseek-cot-agents.py
+│   │   │   ├── deepseek-ollama-rag.py
+│   │   │   ├── deepseek-rag-agents-streamlit.py
+│   │   │   ├── deepseek-rag-agents-task.py
+│   │   │   ├── deepseek-rag-agents-ui.py
+│   │   │   ├── deepseek-rag-agents.py
+│   │   │   ├── deepseek-reasoning-agents.py
+│   │   │   ├── deepseek-reasoning-multi-agents.py
+│   │   │   ├── deepseek-reasoning-output-tokens.py
+│   │   │   ├── deepseek-think.py
+│   │   │   ├── document.txt
+│   │   │   ├── evaluator-optimiser.py
+│   │   │   ├── example_callback.py
+│   │   │   ├── example_custom_tools.py
+│   │   │   ├── example_sequential.py
+│   │   │   ├── finance-agent.py
+│   │   │   ├── gradio-agents.py
+│   │   │   ├── gradio-multiagents.py
+│   │   │   ├── groq-mcp.py
+│   │   │   ├── guardrails_example.py
+│   │   │   ├── hackathon-judge-agent-code.py
+│   │   │   ├── hackathon-judge-agent.py
+│   │   │   ├── hackathon-judge-streamlit.py
+│   │   │   ├── image-agent-async.py
+│   │   │   ├── image-agent.py
+│   │   │   ├── image-to-text-agent.py
+│   │   │   ├── image-understanding-agent.py
+│   │   │   ├── image.jpg
+│   │   │   ├── knowledge-agents-task.py
+│   │   │   ├── knowledge-agents.py
+│   │   │   ├── knowledge-direct-simple-test.py
+│   │   │   ├── knowledge-direct-test.py
+│   │   │   ├── knowledge-large-pdf-test.py
+│   │   │   ├── langchain_example.py
+│   │   │   ├── langchain_logs.py
+│   │   │   ├── large.pdf
+│   │   │   ├── litellm-reasoning.py
+│   │   │   ├── llamaindex_example.py
+│   │   │   ├── llm-anthropic.py
+│   │   │   ├── llm-deepseek-agents.py
+│   │   │   ├── llm-deepseek-reasoning-agents.py
+│   │   │   ├── llm-deepseek-reasoning-steps.py
+│   │   │   ├── llm-gemini-advanced.py
+│   │   │   ├── llm-gemini.py
+│   │   │   ├── llm-langchain-toolcall.py
+│   │   │   ├── llm-tool-call.py
+│   │   │   ├── markdown-agent.py
+│   │   │   ├── mcp_airbnb_client_direct.py
+│   │   │   ├── mcp_airbnb_full_direct.py
+│   │   │   ├── mcp_client_direct.py
+│   │   │   ├── mcp_wrapper.py
+│   │   │   ├── mcp-agents-detailed.py
+│   │   │   ├── mcp-agents.py
+│   │   │   ├── mcp-basic.py
+│   │   │   ├── mcp-http-stream-example.py
+│   │   │   ├── mcp-llama4.py
+│   │   │   ├── mcp-mini-airbnb.py
+│   │   │   ├── mcp-mini-bravesearch.py
+│   │   │   ├── mcp-multiagents.py
+│   │   │   ├── mcp-npx-airbnb-agent-direct.py
+│   │   │   ├── mcp-npx-airbnb-stockprice.py
+│   │   │   ├── mcp-npx-airbnb.py
+│   │   │   ├── mcp-npx-brave.py
+│   │   │   ├── mcp-npx-mini-airbnb-stockprice.py
+│   │   │   ├── mcp-ollama-python.py
+│   │   │   ├── mcp-ollama.py
+│   │   │   ├── mcp-python-stockprice.py
+│   │   │   ├── mcp-sse-direct-agent.py
+│   │   │   ├── mcp-sse-direct-client.py
+│   │   │   ├── mcp-sse-direct-server.py
+│   │   │   ├── mcp-sse-weather.py
+│   │   │   ├── mcp-sse.py
+│   │   │   ├── md.py
+│   │   │   ├── memory_example.py
+│   │   │   ├── memory_simple.py
+│   │   │   ├── memory-add-search.py
+│   │   │   ├── memory-search-advanced.py
+│   │   │   ├── memory-search-simple-test.py
+│   │   │   ├── memory-search-simple.py
+│   │   │   ├── mini_agents_example.py
+│   │   │   ├── multi-agent-api.py
+│   │   │   ├── multi-agents-api.py
+│   │   │   ├── multi-agents-group-api.py
+│   │   │   ├── multimodal.py
+│   │   │   ├── npx_mcp_wrapper_main.py
+│   │   │   ├── openai-mcp.py
+│   │   │   ├── orchestrator-workers.py
+│   │   │   ├── parallelisation.py
+│   │   │   ├── pdf_agents_example.py
+│   │   │   ├── planning-agent.py
+│   │   │   ├── programming-agent.py
+│   │   │   ├── prompt_chaining copy.py
+│   │   │   ├── prompt_chaining.py
+│   │   │   ├── query_rewriter_test.py
+│   │   │   ├── recommendation-agent.py
+│   │   │   ├── repetitive-agents.py
+│   │   │   ├── repetitive-manual-agents.py
+│   │   │   ├── research-agent.py
+│   │   │   ├── routing copy.py
+│   │   │   ├── routing.py
+│   │   │   ├── sample.docx
+│   │   │   ├── sample.md
+│   │   │   ├── sample.txt
+│   │   │   ├── shopping-agent.py
+│   │   │   ├── simple-api-mcp.py
+│   │   │   ├── simple-api.py
+│   │   │   ├── simple-mcp-multi-agents-server.py
+│   │   │   ├── simple-mcp-server.py
+│   │   │   ├── single-agent.py
+│   │   │   ├── state_based_workflow_example.py
+│   │   │   ├── state_management_example.py
+│   │   │   ├── state_with_memory_example.py
+│   │   │   ├── streamlit-agents.py
+│   │   │   ├── streamlit-multiagents.py
+│   │   │   ├── structured_agents_example.py
+│   │   │   ├── structured_response_example.py
+│   │   │   ├── tasks.csv
+│   │   │   ├── telemetry_example.py
+│   │   │   ├── tesla-stock-price.csv
+│   │   │   ├── test_basic_agents_demo.py
+│   │   │   ├── test_context_agent.py
+│   │   │   ├── test_embedding_logging.py
+│   │   │   ├── test_fix_comprehensive.py
+│   │   │   ├── test_gemini_streaming_fix.py
+│   │   │   ├── test_handoff_compatibility.py
+│   │   │   ├── test_http_stream_basic.py
+│   │   │   ├── test_llm_self_reflection_direct.py
+│   │   │   ├── test_ollama_async_fix.py
+│   │   │   ├── test_ollama_fix.py
+│   │   │   ├── test_ollama_sequential_fix.py
+│   │   │   ├── test_plugin_system.py
+│   │   │   ├── test_posthog_fixed.py
+│   │   │   ├── test_prompt_expander_agent.py
+│   │   │   ├── test_self_reflection_comprehensive.py
+│   │   │   ├── test_self_reflection_fix_simple.py
+│   │   │   ├── test_self_reflection_fix_verification.py
+│   │   │   ├── test_validation_feedback.py
+│   │   │   ├── test_web_fetch.py
+│   │   │   ├── test_web_search.py
+│   │   │   ├── test-graph-memory.py
+│   │   │   ├── test.py
+│   │   │   ├── tools_example.py
+│   │   │   ├── tools-class.py
+│   │   │   ├── ui.py
+│   │   │   ├── vector-db-agents.py
+│   │   │   ├── video-agent.py
+│   │   │   ├── websearch-agent.py
+│   │   │   ├── wikipedia-agent.py
+│   │   │   ├── workflow_example_basic.py
+│   │   │   ├── workflow_example_detailed.py
+│   │   │   └── workflow-test-agents.py
+│   │   ├── uv.lock
+│   │   ├── validate_fix.py
+│   │   ├── weather_server.py
+│   │   └── xml-toolcall-agent.py
+│   └── praisonai-ts
+│       ├── examples
+│       │   ├── arxiv-search.ts
+│       │   ├── commonjs
+│       │   │   ├── app.js
+│       │   │   ├── miniagents.js
+│       │   │   ├── movie-script.js
+│       │   │   ├── multi-agent.js
+│       │   │   ├── multiagents.js
+│       │   │   ├── single-agent.js
+│       │   │   └── task-based-agent.js
+│       │   ├── concepts
+│       │   │   ├── movie-script-agent.ts
+│       │   │   ├── multi-agent.ts
+│       │   │   ├── README.md
+│       │   │   ├── single-agent.ts
+│       │   │   └── task-based-agent.ts
+│       │   ├── downloads
+│       │   │   └── 2501.17863v1.pdf
+│       │   ├── README-tool-examples.md
+│       │   ├── simple
+│       │   │   ├── direct-function-tools.ts
+│       │   │   ├── multi-agent-chat.ts
+│       │   │   ├── multi-agent-tools.ts
+│       │   │   ├── multi-agent.ts
+│       │   │   ├── multi-tool-call.ts
+│       │   │   ├── parallel-agents-chat.ts
+│       │   │   ├── single-agent-chat.ts
+│       │   │   ├── single-agent-tool-call.ts
+│       │   │   ├── single-agent.ts
+│       │   │   ├── task-based-agent-chat.ts
+│       │   │   ├── task-based-agent-tools.ts
+│       │   │   └── task-based-agent.ts
+│       │   └── tools
+│       │       ├── arxiv-tools.ts
+│       │       ├── mcp-sse.ts
+│       │       └── README.md
+│       ├── jest.config.ts
+│       ├── package.json
+│       ├── pnpm-lock.yaml
+│       ├── README.md
+│       ├── src
+│       │   ├── agent
+│       │   │   ├── agent.ts
+│       │   │   ├── index.ts
+│       │   │   ├── proxy.ts
+│       │   │   ├── simple.ts
+│       │   │   └── types.ts
+│       │   ├── index.ts
+│       │   ├── knowledge
+│       │   │   ├── chunking.ts
+│       │   │   ├── index.ts
+│       │   │   └── knowledge.ts
+│       │   ├── llm
+│       │   │   ├── index.ts
+│       │   │   ├── llm.ts
+│       │   │   └── openai.ts
+│       │   ├── main.ts
+│       │   ├── memory
+│       │   │   ├── index.ts
+│       │   │   └── memory.ts
+│       │   ├── process
+│       │   │   ├── index.ts
+│       │   │   └── process.ts
+│       │   ├── task
+│       │   │   ├── index.ts
+│       │   │   └── task.ts
+│       │   ├── tools
+│       │   │   ├── arxivTools.ts
+│       │   │   ├── index.ts
+│       │   │   ├── mcpSse.ts
+│       │   │   ├── README.md
+│       │   │   └── test.ts
+│       │   └── utils
+│       │       ├── logger.ts
+│       │       └── pretty-logger.ts
+│       ├── tests
+│       │   ├── __mocks__
+│       │   │   └── openai.ts
+│       │   ├── development
+│       │   │   ├── concepts
+│       │   │   │   ├── multi-agent.ts
+│       │   │   │   ├── single-agent.ts
+│       │   │   │   └── task-based-agent.ts
+│       │   │   └── simple
+│       │   │       ├── direct-function-tools.ts
+│       │   │       ├── miniagents.js
+│       │   │       ├── multi-agent-tools.ts
+│       │   │       ├── multi-agent.ts
+│       │   │       ├── multi-agents-detailed.ts
+│       │   │       ├── multi-agents-simple.js
+│       │   │       ├── multi-tool-call.ts
+│       │   │       ├── multiagents.js
+│       │   │       ├── single-agent-tool-call.ts
+│       │   │       ├── single-agent.js
+│       │   │       ├── single-agent.ts
+│       │   │       ├── task-based-agent-tools.ts
+│       │   │       └── task-based-agent.ts
+│       │   ├── integration
+│       │   │   ├── agent
+│       │   │   │   └── agent-tools.test.ts
+│       │   │   ├── api
+│       │   │   │   └── agent-tools.test.ts
+│       │   │   └── external
+│       │   │       └── openai-service.test.ts
+│       │   ├── jest.setup.ts
+│       │   ├── test.env
+│       │   └── unit
+│       │       ├── agent
+│       │       │   └── agent.test.ts
+│       │       ├── llm
+│       │       │   └── openai.test.ts
+│       │       ├── memory
+│       │       │   └── memory.test.ts
+│       │       ├── services
+│       │       │   ├── knowledge.test.ts
+│       │       │   └── tools.test.ts
+│       │       └── utils
+│       │           └── logger.test.ts
+│       └── tsconfig.json
+└── tree.txt
+
+174 directories, 1190 files

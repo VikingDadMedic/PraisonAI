@@ -1,0 +1,470 @@
+# SearxNG Search Tool
+
+The SearxNG search tool allows you to perform web searches using your local SearxNG instance, providing privacy-focused search capabilities as an alternative to traditional search engines like Google or DuckDuckGo.
+
+## Overview
+
+SearxNG is a privacy-respecting metasearch engine that aggregates results from multiple search engines without storing your data. This tool integrates with your local SearxNG instance to provide secure, private web searches for your AI agents.
+
+## Installation
+
+First, install the required dependency:
+
+```bash
+pip install requests
+```
+
+You'll also need a running SearxNG instance. You can set it up using Docker:
+
+```bash
+# Run SearxNG locally on port 32768
+
+docker run -d --name searxng -p 32768:8080 searxng/searxng
+```
+
+## Usage
+
+### Basic Usage
+
+```python
+from praisonaiagents.tools import searxng_search
+
+# Basic search
+
+results = searxng_search("AI news")
+
+# With custom parameters
+
+results = searxng_search(
+ query="Python programming",
+ max_results=10,
+ searxng_url="http://localhost:32768/search"
+)
+
+# Display results
+
+for result in results:
+ print(f"Title: {result['title']}")
+ print(f"URL: {result['url']}")
+ print(f"Snippet: {result['snippet']}")
+ print("-" * 50)
+```
+
+### Using the Alias
+
+```python
+from praisonaiagents.tools import searxng
+
+# Same functionality as searxng_search
+
+results = searxng("machine learning tutorials")
+```
+
+### Integration with Agents
+
+```python
+from praisonaiagents import Agent, Task
+from praisonaiagents.tools import searxng_search
+
+# Create an agent with SearxNG search capability
+
+search_agent = Agent(
+ name="Search Agent",
+ instructions="You are a search assistant that helps users find information using SearxNG.",
+ tools=[searxng_search]
+)
+
+# Create a task
+
+task = Task(
+ description="Search for the latest developments in artificial intelligence",
+ agent=search_agent
+)
+
+# Execute the task
+
+result = task.execute()
+print(result)
+```
+
+## Function Parameters
+
+### `searxng_search(query, max_results=5, searxng_url=None)`
+
+**Parameters:**
+- `query` (str, required): The search query string
+- `max_results` (int, optional): Maximum number of results to return. Default: 5
+- `searxng_url` (str, optional): URL of your SearxNG instance. Default: "http://localhost:32768/search"
+
+**Returns:**
+- `List[Dict]`: List of search results, each containing:
+- `title`: The title of the search result
+- `url`: The URL of the search result
+- `snippet`: A brief snippet/description of the content
+- `error`: Error message if the search fails
+
+## Configuration
+
+### Environment Variables
+
+You can configure SearxNG behavior using environment variables:
+
+```python
+import os
+
+# Set default SearxNG URL
+
+os.environ['SEARXNG_URL'] = 'http://my-searxng-server:8080/search'
+
+# Connection timeout (in seconds)
+
+os.environ['SEARXNG_TIMEOUT'] = '10'
+
+# Maximum results per search
+
+os.environ['SEARXNG_MAX_RESULTS'] = '20'
+
+# Enable/disable SSL verification
+
+os.environ['SEARXNG_VERIFY_SSL'] = 'true'
+
+# The tool will use these defaults if none are provided
+
+results = searxng_search("AI research")
+```
+
+### SearxNG Instance Configuration
+
+Configure your SearxNG instance by editing the `settings.yml` file:
+
+```yaml
+# /etc/searxng/settings.yml
+
+use_default_settings: true
+
+server:
+ port: 8080
+ bind_address: "0.0.0.0"
+ secret_key: "your-secret-key-here"
+ limiter: true # Enable rate limiting
+
+search:
+ safe_search: 0 # 0: None, 1: Moderate, 2: Strict
+
+ autocomplete: "duckduckgo"
+ default_lang: "en"
+ max_ban_time_on_fail: 120 # seconds
+
+engines:
+- name: google
+ engine: google
+ shortcut: g
+ disabled: false
+- name: duckduckgo
+ engine: duckduckgo
+ shortcut: ddg
+ disabled: false
+- name: wikipedia
+ engine: wikipedia
+ shortcut: wiki
+ disabled: false
+
+outgoing:
+ request_timeout: 6.0 # seconds
+
+ max_request_timeout: 10.0 # seconds
+
+ useragent_suffix: "PraisonAI"
+ pool_connections: 100
+ pool_maxsize: 10
+```
+
+### Advanced Configuration Options
+
+#### Rate Limiting Configuration
+
+```python
+# Configure rate limiting for your SearxNG tool
+
+from praisonaiagents.tools import searxng_search
+import time
+
+class RateLimitedSearxNG:
+ def __init__(self, max_requests_per_minute=30):
+ self.max_requests = max_requests_per_minute
+ self.requests = []
+
+ def search(self, query, **kwargs):
+ # Check rate limit
+
+ now = time.time()
+ self.requests = [r for r in self.requests if now - r = self.max_requests:
+ wait_time = 60 - (now - self.requests[0])
+ time.sleep(wait_time)
+
+ self.requests.append(now)
+ return searxng_search(query, **kwargs)
+
+# Use rate-limited search
+
+rate_limited_search = RateLimitedSearxNG(max_requests_per_minute=30)
+results = rate_limited_search.search("AI news")
+```
+
+#### Authentication Configuration
+
+```python
+# If your SearxNG instance requires authentication
+
+import requests
+from functools import partial
+
+def authenticated_searxng_search(query, auth_token, **kwargs):
+ headers = {"Authorization": f"Bearer {auth_token}"}
+ searxng_url = kwargs.get('searxng_url', 'http://localhost:32768/search')
+
+ # Add authentication headers
+
+ response = requests.get(
+ searxng_url,
+ ,
+ headers=headers,
+ timeout=10
+ )
+
+ # Process response...
+
+ return response.json()
+
+# Create authenticated search tool
+
+auth_token = "your-auth-token"
+secure_search = partial(authenticated_searxng_search, auth_token=auth_token)
+```
+
+#### Proxy Configuration
+
+```python
+# Configure SearxNG to use proxies
+
+proxies = {
+ 'http': 'http://proxy.example.com:8080',
+ 'https': 'https://proxy.example.com:8080'
+}
+
+# Custom search with proxy
+
+def proxied_searxng_search(query, **kwargs):
+ import requests
+
+ searxng_url = kwargs.get('searxng_url', 'http://localhost:32768/search')
+ response = requests.get(
+ searxng_url,
+ ,
+ proxies=proxies,
+ timeout=10
+ )
+ return response.json()
+```
+
+### Search Categories and Filtering
+
+Configure search categories and filters:
+
+```python
+# Search specific categories
+
+params = {
+ 'q': 'machine learning',
+ 'categories': 'science,it', # Comma-separated categories
+
+ 'engines': 'google,duckduckgo', # Specific engines
+
+ 'lang': 'en', # Language preference
+
+ 'time_range': 'month', # day, week, month, year
+
+ 'safesearch': 1 # 0: off, 1: moderate, 2: strict
+
+}
+
+# Custom search with filters
+
+def filtered_searxng_search(query, categories=None, time_range=None, **kwargs):
+ import requests
+
+ searxng_url = kwargs.get('searxng_url', 'http://localhost:32768/search')
+
+ params = {'q': query, 'format': 'json'}
+ if categories:
+ params['categories'] = categories
+ if time_range:
+ params['time_range'] = time_range
+
+ # Make request with custom parameters
+
+ try:
+ response = requests.get(searxng_url, params=params, timeout=10)
+ response.raise_for_status()
+ data = response.json()
+
+ # Extract and format results
+
+ results = []
+ for result in data.get('results', []):
+ results.append({
+ 'title': result.get('title', ''),
+ 'url': result.get('url', ''),
+ 'snippet': result.get('content', '')
+ })
+ return results
+ except Exception as e:
+ return [{'error': f'Search failed: {str(e)}'}]
+
+# Usage
+
+recent_ai_news = filtered_searxng_search(
+ "artificial intelligence",
+ categories="news",
+ time_range="week"
+)
+```
+
+### SearxNG Setup
+
+For production use, consider:
+1. **Custom SearxNG Configuration**: Configure engines, categories, and settings
+2. **Authentication**: Set up authentication if needed
+3. **Rate Limiting**: Configure appropriate rate limits
+4. **SSL/TLS**: Use HTTPS for secure connections
+5. **Monitoring**: Set up logging and monitoring
+6. **Caching**: Configure Redis for result caching
+7. **Load Balancing**: Use multiple SearxNG instances
+
+## Advanced Usage
+
+### Multi-Agent Search System
+
+```python
+from praisonaiagents import Agent, Task, Process
+from praisonaiagents.tools import searxng_search
+
+# Research agent
+
+researcher = Agent(
+ name="Researcher",
+ instructions="Search for academic and technical information",
+ tools=[searxng_search]
+)
+
+# News agent
+
+news_agent = Agent(
+ name="News Agent",
+ instructions="Search for latest news and current events",
+ tools=[searxng_search]
+)
+
+# Tasks
+
+research_task = Task(
+ description="Find recent research papers on quantum computing",
+ agent=researcher
+)
+
+news_task = Task(
+ description="Find latest news about AI developments",
+ agent=news_agent
+)
+
+# Process
+
+process = Process(
+ agents=[researcher, news_agent],
+ tasks=[research_task, news_task]
+)
+
+result = process.run()
+```
+
+### Custom SearxNG Configuration
+
+```python
+from praisonaiagents.tools import searxng_search
+
+# Search with specific SearxNG instance
+
+results = searxng_search(
+ query="sustainable energy",
+ max_results=15,
+ searxng_url="https://my-private-searxng.com/search"
+)
+```
+
+## Error Handling
+
+The tool includes comprehensive error handling:
+
+```python
+results = searxng_search("test query")
+
+for result in results:
+ if "error" in result:
+ print(f"Search error: {result['error']}")
+ else:
+ print(f"Found: {result['title']}")
+```
+
+## Common Error Messages
+
+- **Connection Error**: "Could not connect to SearxNG at {url}. Ensure SearxNG is running."
+- **Timeout Error**: "SearxNG search request timed out"
+- **Missing Dependency**: "SearxNG search requires requests package. Install with: pip install requests"
+- **Parsing Error**: "Error parsing SearxNG response: {error}"
+
+## Best Practices
+
+1. **Local Instance**: Use a local SearxNG instance for better privacy and performance
+2. **Rate Limiting**: Be mindful of search frequency to avoid overwhelming your instance
+3. **Error Handling**: Always check for errors in the response
+4. **Custom URLs**: Use environment variables for different deployment environments
+5. **Result Validation**: Validate search results before using them in your application
+
+## Comparison with Other Search Tools
+
+| Feature | SearxNG | DuckDuckGo | Google |
+|---------|---------|------------|--------|
+| Privacy | ✅ High | ⚡ Medium | ❌ Low |
+| Local Control | ✅ Yes | ❌ No | ❌ No |
+| Multi-Engine | ✅ Yes | ❌ No | ❌ No |
+| Customization | ✅ High | ❌ Limited | ❌ None |
+
+## Troubleshooting
+
+### SearxNG Not Responding
+
+```bash
+# Check if SearxNG is running
+
+curl http://localhost:32768/search?q=test&format=json
+
+# Restart SearxNG container
+
+docker restart searxng
+```
+
+### Connection Issues
+
+```python
+# Test connection before using
+
+import requests
+
+try:
+ response = requests.get("http://localhost:32768/search", timeout=5)
+ print("SearxNG is accessible")
+except requests.exceptions.ConnectionError:
+ print("Cannot connect to SearxNG")
+```
+
+For more information about SearxNG setup and configuration, visit the [official SearxNG documentation](https://docs.searxng.org/).

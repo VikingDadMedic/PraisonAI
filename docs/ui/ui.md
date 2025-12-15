@@ -1,0 +1,92 @@
+# User Interface
+
+## Installation
+
+```bash
+pip install -U "praisonai[ui]"
+```
+
+## Interface Types
+
+## Features
+
+Agent orchestration, workflow management, inter-agent communication
+
+## Getting Started
+
+## Chainlit
+
+```bash
+export OPENAI_API_KEY="Enter your API key"
+chainlit create-secret
+export CHAINLIT_AUTH_SECRET=xxxxxxxx
+praisonai ui
+```
+
+or
+
+```bash
+python -m praisonai ui
+```
+
+Default Username: admin
+Default Password: admin
+
+### To Change Username and Password
+
+create .env file in the root folder of the project
+Add below Variables and required Username/Password
+```
+CHAINLIT_USERNAME=admin
+CHAINLIT_USERNAME=admin
+```
+
+## Using Chainlit (with Pictures)
+
+## Run Automatically
+
+### Install Required Package
+
+![Install Required Package](../images/ui-step-1.png)
+
+### User Interface
+
+![User Interface](../images/ui-step-2.png)
+
+### Select Auto Mode
+
+![Select Auto Mode](../images/ui-step-4.png)
+
+### Configure Agent Settings
+
+![Configure Agent Settings](../images/ui-step-3.png)
+
+### Define a Task to Auto Generate Agents and Run
+
+![Define a Task](../images/ui-step-5.png)
+
+### Output
+
+![Output](../images/ui-step-6.png)
+
+## Run Manually
+
+### Select Manual Mode
+
+![Select Manual Mode](../images/ui-step-7.png)
+
+### Modify Agents and Tools
+
+![Modify Agents and Tools](../images/ui-step-10.png)
+
+## Review Generated Agents
+
+![Review Generated Agents](../images/ui-step-9.png)
+
+### Run Agents
+
+![Run Agents](../images/ui-step-8.png)
+
+### Manual Model Output
+
+![Manual Model Output](../images/ui-step-11.png)

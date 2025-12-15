@@ -1,0 +1,2001 @@
+{
+  "exportDate": "2025-12-15T12:58:21.174Z",
+  "totalFiles": 318,
+  "errors": [],
+  "files": [
+    {
+      "path": "agents/agents.md",
+      "title": "AI Agents",
+      "size": 1573,
+      "category": "agents"
+    },
+    {
+      "path": "agents/data-analyst.md",
+      "title": "Data Analyst Agent",
+      "size": 1771,
+      "category": "agents"
+    },
+    {
+      "path": "agents/deep-research.md",
+      "title": "Deep Research Agent",
+      "size": 3096,
+      "category": "agents"
+    },
+    {
+      "path": "agents/finance.md",
+      "title": "Finance Agent",
+      "size": 1434,
+      "category": "agents"
+    },
+    {
+      "path": "agents/image-to-text.md",
+      "title": "Image to Text Agent",
+      "size": 1751,
+      "category": "agents"
+    },
+    {
+      "path": "agents/image.md",
+      "title": "Image Analysis Agent",
+      "size": 1743,
+      "category": "agents"
+    },
+    {
+      "path": "agents/markdown.md",
+      "title": "Markdown Agent",
+      "size": 1628,
+      "category": "agents"
+    },
+    {
+      "path": "agents/planning.md",
+      "title": "Planning Agent",
+      "size": 1478,
+      "category": "agents"
+    },
+    {
+      "path": "agents/programming.md",
+      "title": "Programming Agent",
+      "size": 1778,
+      "category": "agents"
+    },
+    {
+      "path": "agents/prompt-expander.md",
+      "title": "Prompt Expander Agent",
+      "size": 4229,
+      "category": "agents"
+    },
+    {
+      "path": "agents/query-rewriter.md",
+      "title": "Query Rewriter Agent",
+      "size": 8922,
+      "category": "agents"
+    },
+    {
+      "path": "agents/recommendation.md",
+      "title": "Recommendation Agent",
+      "size": 1544,
+      "category": "agents"
+    },
+    {
+      "path": "agents/research.md",
+      "title": "Research Agent",
+      "size": 1455,
+      "category": "agents"
+    },
+    {
+      "path": "agents/shopping.md",
+      "title": "Shopping Agent",
+      "size": 1489,
+      "category": "agents"
+    },
+    {
+      "path": "agents/single.md",
+      "title": "Single Agent",
+      "size": 1366,
+      "category": "agents"
+    },
+    {
+      "path": "agents/video.md",
+      "title": "Video Agent",
+      "size": 1948,
+      "category": "agents"
+    },
+    {
+      "path": "agents/websearch.md",
+      "title": "Web Search Agent",
+      "size": 1645,
+      "category": "agents"
+    },
+    {
+      "path": "agents/wikipedia.md",
+      "title": "Wikipedia Agent",
+      "size": 1760,
+      "category": "agents"
+    },
+    {
+      "path": "api/praisonaiagents/agent/agent.md",
+      "title": "Module praisonaiagents.agent.agent",
+      "size": 4974,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/agent/handoff.md",
+      "title": "handoff",
+      "size": 6929,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/agent/image_agent.md",
+      "title": "ImageAgent",
+      "size": 5253,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/agent/router_agent.md",
+      "title": "RouterAgent",
+      "size": 7331,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/agents/agents.md",
+      "title": "Module praisonaiagents.agents.agents",
+      "size": 3432,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/agents/autoagents.md",
+      "title": "Module praisonaiagents.agents.autoagents",
+      "size": 5243,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/display.md",
+      "title": "Display Functions",
+      "size": 8397,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/handoff/handoff.md",
+      "title": "Module praisonaiagents.handoff",
+      "size": 5558,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/index.md",
+      "title": "API Reference",
+      "size": 1155,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/knowledge/knowledge.md",
+      "title": "Module praisonaiagents.knowledge",
+      "size": 15361,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/mcp/mcp.md",
+      "title": "Module praisonaiagents.mcp",
+      "size": 6111,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/memory/memory.md",
+      "title": "Module praisonaiagents.memory",
+      "size": 16413,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/outputs.md",
+      "title": "Output Classes",
+      "size": 7988,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/process/process.md",
+      "title": "Process",
+      "size": 8221,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/session.md",
+      "title": "Module praisonaiagents.session",
+      "size": 16080,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/task/task.md",
+      "title": "Task",
+      "size": 10685,
+      "category": "api"
+    },
+    {
+      "path": "api/praisonaiagents/telemetry.md",
+      "title": "Telemetry API",
+      "size": 10023,
+      "category": "api"
+    },
+    {
+      "path": "api-reference/index.md",
+      "title": "API Reference",
+      "size": 1057,
+      "category": "api-reference"
+    },
+    {
+      "path": "api.md",
+      "title": "API Reference",
+      "size": 1842,
+      "category": "root"
+    },
+    {
+      "path": "best-practices/agent-retry-strategies.md",
+      "title": "Agent Retry Strategies",
+      "size": 21955,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/debugging.md",
+      "title": "Debugging Multi-Agent Systems",
+      "size": 24596,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/error-handling.md",
+      "title": "Error Handling in Multi-Agent Systems",
+      "size": 8735,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/graceful-degradation.md",
+      "title": "Graceful Degradation Patterns",
+      "size": 22024,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/memory-cleanup.md",
+      "title": "Memory Cleanup for Long-Running Apps",
+      "size": 9922,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/multi-user-sessions.md",
+      "title": "Multi-User Session Handling",
+      "size": 22310,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/performance-tuning.md",
+      "title": "Performance Tuning Guidelines",
+      "size": 23589,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/security.md",
+      "title": "Security Best Practices",
+      "size": 22018,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/state-conflict-resolution.md",
+      "title": "State Conflict Resolution",
+      "size": 16277,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/task-orchestration.md",
+      "title": "Task Orchestration Best Practices",
+      "size": 16428,
+      "category": "best-practices"
+    },
+    {
+      "path": "best-practices/token-optimization.md",
+      "title": "Token Usage Optimization",
+      "size": 17489,
+      "category": "best-practices"
+    },
+    {
+      "path": "call.md",
+      "title": "PraisonAI Call",
+      "size": 2754,
+      "category": "root"
+    },
+    {
+      "path": "concepts/agents.md",
+      "title": "Understanding Agents",
+      "size": 2841,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/approval.md",
+      "title": "Human Approval System",
+      "size": 5384,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/guardrails.md",
+      "title": "Guardrails",
+      "size": 9567,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/handoff.md",
+      "title": "Agent Handoff System",
+      "size": 2237,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/handoffs.md",
+      "title": "Agent Handoffs",
+      "size": 7634,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/input-handling.md",
+      "title": "Input Handling Patterns",
+      "size": 11178,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/knowledge.md",
+      "title": "AI Agents with Knowledge",
+      "size": 3955,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/memory.md",
+      "title": "AI Agents with Memory",
+      "size": 3331,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/process.md",
+      "title": "Understanding Process Types",
+      "size": 2183,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/session-management.md",
+      "title": "Session Management",
+      "size": 12693,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/tasks.md",
+      "title": "Understanding Tasks",
+      "size": 3212,
+      "category": "concepts"
+    },
+    {
+      "path": "concepts/tools.md",
+      "title": "AI Agents with Tools",
+      "size": 1469,
+      "category": "concepts"
+    },
+    {
+      "path": "configuration/agent-config.md",
+      "title": "Agent Configuration",
+      "size": 6395,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/best-practices.md",
+      "title": "Configuration Best Practices",
+      "size": 7489,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/guardrail-config.md",
+      "title": "Guardrail Configuration",
+      "size": 9069,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/handoff-config.md",
+      "title": "Handoff Configuration",
+      "size": 6885,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/index.md",
+      "title": "Configuration Reference",
+      "size": 2111,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/llm-config.md",
+      "title": "LLM Configuration",
+      "size": 9610,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/memory-config.md",
+      "title": "Memory Configuration",
+      "size": 9700,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/task-config.md",
+      "title": "Task Configuration",
+      "size": 4595,
+      "category": "configuration"
+    },
+    {
+      "path": "configuration/tool-config.md",
+      "title": "Tool Configuration",
+      "size": 9174,
+      "category": "configuration"
+    },
+    {
+      "path": "contributing.md",
+      "title": "Contributing",
+      "size": 414,
+      "category": "root"
+    },
+    {
+      "path": "course/agents/01-introduction.md",
+      "title": "Introduction to AI Agents",
+      "size": 1675,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/02-types-of-agents.md",
+      "title": "Types of AI Agents",
+      "size": 1855,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/03-agent-architecture.md",
+      "title": "Agent Architecture",
+      "size": 1867,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/04-agent-instructions.md",
+      "title": "Creating Effective Agent Instructions",
+      "size": 1547,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/05-agent-tools.md",
+      "title": "Agent Tools",
+      "size": 3340,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/06-agent-memory.md",
+      "title": "Agent Memory",
+      "size": 2634,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/07-multi-agent-systems.md",
+      "title": "Multi-Agent Systems",
+      "size": 3123,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/08-agent-process.md",
+      "title": "Agent Process",
+      "size": 2623,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/09-knowledge-bases.md",
+      "title": "Knowledge Bases",
+      "size": 3421,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/10-agent-tasks.md",
+      "title": "Agent Tasks",
+      "size": 3652,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/11-creating-your-first-agent.md",
+      "title": "Creating Your First Agent",
+      "size": 3846,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/12-adding-tools-to-agents.md",
+      "title": "Adding Tools to Agents",
+      "size": 1490,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/13-building-multi-agent-system.md",
+      "title": "Building a Multi-Agent System",
+      "size": 5264,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/14-conversational-agents.md",
+      "title": "Building Conversational Agents",
+      "size": 4451,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/15-research-agents.md",
+      "title": "Building Research Agents",
+      "size": 5583,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/16-content-creation-agents.md",
+      "title": "Content Creation Agents",
+      "size": 6323,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/17-data-analysis-agents.md",
+      "title": "Data Analysis Agents",
+      "size": 7729,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/18-customer-support-agents.md",
+      "title": "Customer Support Agents",
+      "size": 7404,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/19-personal-assistant-agents.md",
+      "title": "Personal Assistant Agents",
+      "size": 7110,
+      "category": "course"
+    },
+    {
+      "path": "course/agents/20-deploying-agents.md",
+      "title": "Deploying Agents",
+      "size": 7092,
+      "category": "course"
+    },
+    {
+      "path": "deploy/aws.md",
+      "title": "Deploying PraisonAI Agents to AWS",
+      "size": 5583,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy/deploy.md",
+      "title": "Deploying PraisonAI Agents as APIs",
+      "size": 3266,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy/googlecloud.md",
+      "title": "Deploying PraisonAI Agents to Google Cloud",
+      "size": 5880,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy/mcp-server-deploy.md",
+      "title": "Deploying MCP Servers",
+      "size": 3626,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy/multi-agents-deploy.md",
+      "title": "Deploying Multi-Agent Systems as APIs",
+      "size": 4635,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy/remote-agents.md",
+      "title": "Remote Agent Deployment",
+      "size": 8698,
+      "category": "deploy"
+    },
+    {
+      "path": "deploy.md",
+      "title": "Deploy",
+      "size": 1200,
+      "category": "root"
+    },
+    {
+      "path": "developers/agents-playbook.md",
+      "title": "Agents Playbook",
+      "size": 2149,
+      "category": "developers"
+    },
+    {
+      "path": "developers/googlecolab-tools.md",
+      "title": "Google Colab Tools",
+      "size": 10859,
+      "category": "developers"
+    },
+    {
+      "path": "developers/googlecolab.md",
+      "title": "Google Colab Integration",
+      "size": 13924,
+      "category": "developers"
+    },
+    {
+      "path": "developers/local-development.md",
+      "title": "Local Development",
+      "size": 465,
+      "category": "developers"
+    },
+    {
+      "path": "developers/wrapper-tools.md",
+      "title": "Integrate with Tools",
+      "size": 1247,
+      "category": "developers"
+    },
+    {
+      "path": "developers/wrapper.md",
+      "title": "Include praisonai package in your project",
+      "size": 1746,
+      "category": "developers"
+    },
+    {
+      "path": "examples/adaptive-learning.md",
+      "title": "Adaptive Learning",
+      "size": 735,
+      "category": "examples"
+    },
+    {
+      "path": "examples/climate-impact.md",
+      "title": "Climate Impact",
+      "size": 938,
+      "category": "examples"
+    },
+    {
+      "path": "examples/code-analysis.md",
+      "title": "Code Analysis Agent",
+      "size": 1352,
+      "category": "examples"
+    },
+    {
+      "path": "examples/code-review.md",
+      "title": "Code Review",
+      "size": 604,
+      "category": "examples"
+    },
+    {
+      "path": "examples/crypto-validator.md",
+      "title": "Crypto Validator",
+      "size": 914,
+      "category": "examples"
+    },
+    {
+      "path": "examples/customer-service.md",
+      "title": "Customer Service",
+      "size": 5083,
+      "category": "examples"
+    },
+    {
+      "path": "examples/defi-market-maker.md",
+      "title": "DeFi Market Maker",
+      "size": 908,
+      "category": "examples"
+    },
+    {
+      "path": "examples/emergency-response.md",
+      "title": "Emergency Response",
+      "size": 795,
+      "category": "examples"
+    },
+    {
+      "path": "examples/fraud-detection.md",
+      "title": "Fraud Detection",
+      "size": 711,
+      "category": "examples"
+    },
+    {
+      "path": "examples/hackathon-judge.md",
+      "title": "Hackathon Judge Agent",
+      "size": 1434,
+      "category": "examples"
+    },
+    {
+      "path": "examples/healthcare-diagnosis.md",
+      "title": "Healthcare Diagnosis",
+      "size": 800,
+      "category": "examples"
+    },
+    {
+      "path": "examples/medicine-protocol.md",
+      "title": "Medicine Protocol",
+      "size": 895,
+      "category": "examples"
+    },
+    {
+      "path": "examples/multilingual-content.md",
+      "title": "Multilingual Content",
+      "size": 851,
+      "category": "examples"
+    },
+    {
+      "path": "examples/neural-architecture.md",
+      "title": "Neural Architecture",
+      "size": 978,
+      "category": "examples"
+    },
+    {
+      "path": "examples/predictive-maintenance.md",
+      "title": "Predictive Maintenance",
+      "size": 851,
+      "category": "examples"
+    },
+    {
+      "path": "examples/quantum-optimiser.md",
+      "title": "Quantum Optimiser",
+      "size": 937,
+      "category": "examples"
+    },
+    {
+      "path": "examples/research-assistant.md",
+      "title": "Research Assistant",
+      "size": 893,
+      "category": "examples"
+    },
+    {
+      "path": "examples/smart-city.md",
+      "title": "Smart City",
+      "size": 832,
+      "category": "examples"
+    },
+    {
+      "path": "examples/space-mission.md",
+      "title": "Space Mission",
+      "size": 986,
+      "category": "examples"
+    },
+    {
+      "path": "examples/supply-chain.md",
+      "title": "Supply Chain",
+      "size": 622,
+      "category": "examples"
+    },
+    {
+      "path": "examples/vulnerability-detection.md",
+      "title": "Vulnerability Detection",
+      "size": 932,
+      "category": "examples"
+    },
+    {
+      "path": "features/advanced-memory.md",
+      "title": "Advanced Memory System",
+      "size": 7824,
+      "category": "features"
+    },
+    {
+      "path": "features/agent-api-launch.md",
+      "title": "Agent API Launch",
+      "size": 7841,
+      "category": "features"
+    },
+    {
+      "path": "features/approval.md",
+      "title": "Human Approval System",
+      "size": 7200,
+      "category": "features"
+    },
+    {
+      "path": "features/async.md",
+      "title": "Async Agents",
+      "size": 746,
+      "category": "features"
+    },
+    {
+      "path": "features/autoagents.md",
+      "title": "AutoAgents",
+      "size": 2034,
+      "category": "features"
+    },
+    {
+      "path": "features/autonomous-workflow.md",
+      "title": "Agentic Autonomous Workflow",
+      "size": 1487,
+      "category": "features"
+    },
+    {
+      "path": "features/callbacks.md",
+      "title": "AI Agents with Callbacks",
+      "size": 1774,
+      "category": "features"
+    },
+    {
+      "path": "features/camera-integration.md",
+      "title": "Camera Integration",
+      "size": 5785,
+      "category": "features"
+    },
+    {
+      "path": "features/chat-with-pdf.md",
+      "title": "Chat with PDF Agents",
+      "size": 3365,
+      "category": "features"
+    },
+    {
+      "path": "features/chunking-strategies.md",
+      "title": "Chunking Strategies",
+      "size": 9147,
+      "category": "features"
+    },
+    {
+      "path": "features/cli.md",
+      "title": "Command Line Interface",
+      "size": 661,
+      "category": "features"
+    },
+    {
+      "path": "features/codeagent.md",
+      "title": "Code Execution AI Agent",
+      "size": 487,
+      "category": "features"
+    },
+    {
+      "path": "features/context-window-management.md",
+      "title": "Context Window Management",
+      "size": 9588,
+      "category": "features"
+    },
+    {
+      "path": "features/display-callbacks.md",
+      "title": "Display Callbacks",
+      "size": 10871,
+      "category": "features"
+    },
+    {
+      "path": "features/display-system.md",
+      "title": "Display System",
+      "size": 12204,
+      "category": "features"
+    },
+    {
+      "path": "features/evaluator-optimiser.md",
+      "title": "Agentic Evaluator Optimizer",
+      "size": 1425,
+      "category": "features"
+    },
+    {
+      "path": "features/generate-reasoning.md",
+      "title": "Generate Synthetic Reasoning Data Agents",
+      "size": 931,
+      "category": "features"
+    },
+    {
+      "path": "features/graph-memory.md",
+      "title": "Graph Memory",
+      "size": 11864,
+      "category": "features"
+    },
+    {
+      "path": "features/guardrails.md",
+      "title": "Guardrails System",
+      "size": 6725,
+      "category": "features"
+    },
+    {
+      "path": "features/handoffs.md",
+      "title": "Agent Handoffs",
+      "size": 6446,
+      "category": "features"
+    },
+    {
+      "path": "features/image-generation.md",
+      "title": "Image Generation AI Agents",
+      "size": 569,
+      "category": "features"
+    },
+    {
+      "path": "features/index.md",
+      "title": "Features Overview",
+      "size": 1680,
+      "category": "features"
+    },
+    {
+      "path": "features/knowledge.md",
+      "title": "Knowledge Base System",
+      "size": 3748,
+      "category": "features"
+    },
+    {
+      "path": "features/langchain.md",
+      "title": "LangChain Agents",
+      "size": 102,
+      "category": "features"
+    },
+    {
+      "path": "features/mathagent.md",
+      "title": "Math AI Agent",
+      "size": 553,
+      "category": "features"
+    },
+    {
+      "path": "features/memory-advanced-search.md",
+      "title": "Memory Advanced Search",
+      "size": 6741,
+      "category": "features"
+    },
+    {
+      "path": "features/mini.md",
+      "title": "Mini AI Agents",
+      "size": 1054,
+      "category": "features"
+    },
+    {
+      "path": "features/model-capabilities.md",
+      "title": "Model Capabilities",
+      "size": 4763,
+      "category": "features"
+    },
+    {
+      "path": "features/model-router.md",
+      "title": "Model Router System",
+      "size": 2835,
+      "category": "features"
+    },
+    {
+      "path": "features/multi-provider-advanced.md",
+      "title": "Advanced Multi-Provider Patterns",
+      "size": 9174,
+      "category": "features"
+    },
+    {
+      "path": "features/multimodal.md",
+      "title": "Multimodal Agents",
+      "size": 818,
+      "category": "features"
+    },
+    {
+      "path": "features/orchestrator-worker.md",
+      "title": "Agentic Orchestrator Worker",
+      "size": 1599,
+      "category": "features"
+    },
+    {
+      "path": "features/parallelisation.md",
+      "title": "Agentic Parallelization",
+      "size": 1439,
+      "category": "features"
+    },
+    {
+      "path": "features/promptchaining.md",
+      "title": "Agentic Prompt Chaining",
+      "size": 1616,
+      "category": "features"
+    },
+    {
+      "path": "features/quality-based-rag.md",
+      "title": "Quality-Based RAG Patterns",
+      "size": 10115,
+      "category": "features"
+    },
+    {
+      "path": "features/quality-checking.md",
+      "title": "Quality Checking",
+      "size": 10055,
+      "category": "features"
+    },
+    {
+      "path": "features/rag.md",
+      "title": "RAG Agents",
+      "size": 3799,
+      "category": "features"
+    },
+    {
+      "path": "features/reasoning-extract.md",
+      "title": "Reasoning Extract Agents",
+      "size": 1245,
+      "category": "features"
+    },
+    {
+      "path": "features/reasoning.md",
+      "title": "Reasoning Agents",
+      "size": 1053,
+      "category": "features"
+    },
+    {
+      "path": "features/repetitive.md",
+      "title": "Repetitive Agents",
+      "size": 11392,
+      "category": "features"
+    },
+    {
+      "path": "features/routing.md",
+      "title": "Agentic Routing",
+      "size": 5990,
+      "category": "features"
+    },
+    {
+      "path": "features/selfreflection.md",
+      "title": "Self Reflection AI Agents",
+      "size": 958,
+      "category": "features"
+    },
+    {
+      "path": "features/sessions.md",
+      "title": "Sessions & Remote Agents",
+      "size": 5339,
+      "category": "features"
+    },
+    {
+      "path": "features/stateful-agents.md",
+      "title": "Stateful Agents Framework",
+      "size": 11393,
+      "category": "features"
+    },
+    {
+      "path": "features/structured.md",
+      "title": "Structured AI Agents",
+      "size": 716,
+      "category": "features"
+    },
+    {
+      "path": "features/task-context-control.md",
+      "title": "Task Context Control",
+      "size": 7751,
+      "category": "features"
+    },
+    {
+      "path": "features/task-validation-feedback.md",
+      "title": "Task Validation & Feedback",
+      "size": 7278,
+      "category": "features"
+    },
+    {
+      "path": "features/telemetry.md",
+      "title": "Telemetry & Performance Tracking",
+      "size": 4857,
+      "category": "features"
+    },
+    {
+      "path": "features/workflow-validation.md",
+      "title": "Workflow Validation Loop",
+      "size": 11158,
+      "category": "features"
+    },
+    {
+      "path": "firecrawl.md",
+      "title": "Firecrawl PraisonAI Integration",
+      "size": 1433,
+      "category": "root"
+    },
+    {
+      "path": "framework/autogen.md",
+      "title": "AG2 with PraisonAI",
+      "size": 765,
+      "category": "framework"
+    },
+    {
+      "path": "framework/crewai.md",
+      "title": "CrewAI with PraisonAI",
+      "size": 682,
+      "category": "framework"
+    },
+    {
+      "path": "framework/praisonaiagents.md",
+      "title": "PraisonAI Agents",
+      "size": 4665,
+      "category": "framework"
+    },
+    {
+      "path": "home.md",
+      "title": "Praison AI",
+      "size": 165,
+      "category": "root"
+    },
+    {
+      "path": "index.md",
+      "title": "Praison AI",
+      "size": 10536,
+      "category": "root"
+    },
+    {
+      "path": "installation.md",
+      "title": "Installation",
+      "size": 334,
+      "category": "root"
+    },
+    {
+      "path": "introduction.md",
+      "title": "Introduction",
+      "size": 1170,
+      "category": "root"
+    },
+    {
+      "path": "js/customtools.md",
+      "title": "Custom Tools for TypeScript AI Agents",
+      "size": 1112,
+      "category": "js"
+    },
+    {
+      "path": "js/development.md",
+      "title": "Development Setup",
+      "size": 260,
+      "category": "js"
+    },
+    {
+      "path": "js/js.md",
+      "title": "JavaScript AI Agents Framework",
+      "size": 1290,
+      "category": "js"
+    },
+    {
+      "path": "js/nodejs.md",
+      "title": "Node.js AI Agents Framework",
+      "size": 1284,
+      "category": "js"
+    },
+    {
+      "path": "js/typescript-async.md",
+      "title": "TypeScript Async AI Agents",
+      "size": 461,
+      "category": "js"
+    },
+    {
+      "path": "js/typescript.md",
+      "title": "TypeScript AI Agents Framework",
+      "size": 1314,
+      "category": "js"
+    },
+    {
+      "path": "mcp/airbnb.md",
+      "title": "Airbnb MCP Integration",
+      "size": 988,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/anthropic.md",
+      "title": "Anthropic MCP Integration",
+      "size": 355,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/aws-kb-retrieval.md",
+      "title": "AWS KB Retrieval MCP Integration",
+      "size": 372,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/bravesearch.md",
+      "title": "Brave Search MCP Integration",
+      "size": 360,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/custom-python-client.md",
+      "title": "Custom Python MCP Client",
+      "size": 1523,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/custom-python-server.md",
+      "title": "Custom Python MCP Server",
+      "size": 800,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/custom.md",
+      "title": "Custom Python MCP Server",
+      "size": 1446,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/everart.md",
+      "title": "Everart MCP Integration",
+      "size": 345,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/filesystem.md",
+      "title": "Filesystem MCP Integration",
+      "size": 354,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/gdrive.md",
+      "title": "Google Drive MCP Integration",
+      "size": 360,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/gemini.md",
+      "title": "Gemini MCP Integration",
+      "size": 349,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/github.md",
+      "title": "GitHub MCP Integration",
+      "size": 342,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/gitlab.md",
+      "title": "GitLab MCP Integration",
+      "size": 342,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/google-maps.md",
+      "title": "Google Maps MCP Integration",
+      "size": 357,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/groq.md",
+      "title": "Groq MCP Integration",
+      "size": 345,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/mcp-server.md",
+      "title": "Creating MCP Servers",
+      "size": 3566,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/mcp-tools.md",
+      "title": "MCP Tools Integration",
+      "size": 4650,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/memory.md",
+      "title": "Memory MCP Integration",
+      "size": 342,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/mistral.md",
+      "title": "Mistral MCP Integration",
+      "size": 351,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/ollama-python.md",
+      "title": "Ollama Python MCP Integration",
+      "size": 368,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/ollama.md",
+      "title": "Ollama MCP Integration",
+      "size": 349,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/openai.md",
+      "title": "OpenAI MCP Integration",
+      "size": 1121,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/openrouter.md",
+      "title": "OpenRouter MCP Integration",
+      "size": 357,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/perplexity.md",
+      "title": "Perplexity MCP Integration",
+      "size": 368,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/playwright.md",
+      "title": "Playwright MCP",
+      "size": 1390,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/postgres.md",
+      "title": "PostgreSQL MCP Integration",
+      "size": 354,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/puppeteer.md",
+      "title": "Puppeteer MCP Integration",
+      "size": 351,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/redis.md",
+      "title": "Redis MCP Integration",
+      "size": 339,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/sequential-thinking.md",
+      "title": "Sequential Thinking MCP Integration",
+      "size": 381,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/slack.md",
+      "title": "Slack MCP Integration",
+      "size": 339,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/sse-transport.md",
+      "title": "SSE Transport",
+      "size": 8793,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/sse.md",
+      "title": "MCP SSE Integration",
+      "size": 1804,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/stdio.md",
+      "title": "MCP STDIO Integration",
+      "size": 1756,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/stockprice.md",
+      "title": "Stock Price MCP Integration",
+      "size": 1416,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/whatsapp.md",
+      "title": "WhatsApp MCP Integration",
+      "size": 2728,
+      "category": "mcp"
+    },
+    {
+      "path": "mcp/xai.md",
+      "title": "xAI MCP Integration",
+      "size": 343,
+      "category": "mcp"
+    },
+    {
+      "path": "models/anthropic.md",
+      "title": "Add Anthropic to Praison AI",
+      "size": 952,
+      "category": "models"
+    },
+    {
+      "path": "models/aws.md",
+      "title": "Add AWS Bedrock to PraisonAI",
+      "size": 3592,
+      "category": "models"
+    },
+    {
+      "path": "models/cohere.md",
+      "title": "Add COHERE to Praison AI",
+      "size": 926,
+      "category": "models"
+    },
+    {
+      "path": "models/deepseek.md",
+      "title": "DeepSeek Agents",
+      "size": 3463,
+      "category": "models"
+    },
+    {
+      "path": "models/google.md",
+      "title": "Google Gemini Agents",
+      "size": 2639,
+      "category": "models"
+    },
+    {
+      "path": "models/groq.md",
+      "title": "Add GROQ to Praison AI",
+      "size": 894,
+      "category": "models"
+    },
+    {
+      "path": "models/mistral.md",
+      "title": "Add Mistral to Praison AI",
+      "size": 1095,
+      "category": "models"
+    },
+    {
+      "path": "models/ollama.md",
+      "title": "Add Ollama to Praison AI",
+      "size": 845,
+      "category": "models"
+    },
+    {
+      "path": "models/openai.md",
+      "title": "Add OPENAI ChatGPT to Praison AI",
+      "size": 2221,
+      "category": "models"
+    },
+    {
+      "path": "models/openrouter.md",
+      "title": "Add OpenRouter to Praison AI",
+      "size": 903,
+      "category": "models"
+    },
+    {
+      "path": "models/other.md",
+      "title": "Other Models",
+      "size": 682,
+      "category": "models"
+    },
+    {
+      "path": "models.md",
+      "title": "Code",
+      "size": 3932,
+      "category": "root"
+    },
+    {
+      "path": "monitoring/agentops.md",
+      "title": "AgentOps PraisonAI Monitoring",
+      "size": 217,
+      "category": "monitoring"
+    },
+    {
+      "path": "monitoring/latency-tracking.md",
+      "title": "Latency Tracking",
+      "size": 14722,
+      "category": "monitoring"
+    },
+    {
+      "path": "nocode/auto.md",
+      "title": "Auto Generation Mode",
+      "size": 1140,
+      "category": "nocode"
+    },
+    {
+      "path": "nocode/initialise.md",
+      "title": "Initialise",
+      "size": 394,
+      "category": "nocode"
+    },
+    {
+      "path": "nocode/installation.md",
+      "title": "Installation",
+      "size": 932,
+      "category": "nocode"
+    },
+    {
+      "path": "nocode/introduction.md",
+      "title": "Introduction",
+      "size": 533,
+      "category": "nocode"
+    },
+    {
+      "path": "nocode/run.md",
+      "title": "Run",
+      "size": 246,
+      "category": "nocode"
+    },
+    {
+      "path": "nocode/tldr.md",
+      "title": "TL;DR",
+      "size": 1092,
+      "category": "nocode"
+    },
+    {
+      "path": "playground.md",
+      "title": "Praison AI Agents Playground",
+      "size": 318,
+      "category": "root"
+    },
+    {
+      "path": "quickstart.md",
+      "title": "Basic",
+      "size": 230,
+      "category": "root"
+    },
+    {
+      "path": "tools/arxiv_tools.md",
+      "title": "arXiv Agent",
+      "size": 7468,
+      "category": "tools"
+    },
+    {
+      "path": "tools/calculator_tools.md",
+      "title": "Calculator Agent",
+      "size": 225,
+      "category": "tools"
+    },
+    {
+      "path": "tools/chain-of-thought.md",
+      "title": "Chain-of-Thought Tools",
+      "size": 16705,
+      "category": "tools"
+    },
+    {
+      "path": "tools/composio.md",
+      "title": "Composio PraisonAI Integration",
+      "size": 1470,
+      "category": "tools"
+    },
+    {
+      "path": "tools/crawl4ai.md",
+      "title": "Crawl4AI Praison AI Integration",
+      "size": 2034,
+      "category": "tools"
+    },
+    {
+      "path": "tools/csv_tools.md",
+      "title": "CSV Agent",
+      "size": 6007,
+      "category": "tools"
+    },
+    {
+      "path": "tools/custom.md",
+      "title": "Create Custom Tools",
+      "size": 5300,
+      "category": "tools"
+    },
+    {
+      "path": "tools/duckdb_tools.md",
+      "title": "DuckDB Agent",
+      "size": 5818,
+      "category": "tools"
+    },
+    {
+      "path": "tools/duckduckgo.md",
+      "title": "DuckDuckGo Praison AI Integration",
+      "size": 581,
+      "category": "tools"
+    },
+    {
+      "path": "tools/duckduckgo_tools.md",
+      "title": "DuckDuckGo Agent",
+      "size": 2434,
+      "category": "tools"
+    },
+    {
+      "path": "tools/excel_tools.md",
+      "title": "Excel Agent",
+      "size": 7077,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/agentql-toolkit.md",
+      "title": "AgentQL structured data extraction Tool",
+      "size": 1319,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/azure-code-interpreter.md",
+      "title": "Azure Container Apps dynamic sessions Code runtime Tool",
+      "size": 784,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/bearly-code-interpreter.md",
+      "title": "Bearly Code Interpreter Tool",
+      "size": 562,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/brave-search.md",
+      "title": "BraveSearch Tool",
+      "size": 927,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/duckduckgo-search.md",
+      "title": "DuckDuckGo Search Tool",
+      "size": 627,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/exa-search.md",
+      "title": "Exa Search Tool",
+      "size": 1116,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/google-search.md",
+      "title": "GoogleSearch Tool",
+      "size": 1066,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/google-serper-search.md",
+      "title": "Google Serper Search Tool",
+      "size": 845,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/google-trends.md",
+      "title": "Google Trends Tool",
+      "size": 682,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/jina-code-interpreter.md",
+      "title": "Jina Code Interpreter Tool",
+      "size": 606,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/jina-search.md",
+      "title": "JinaSearch Tool",
+      "size": 1103,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/searchapi-search.md",
+      "title": "SearchApi Tool",
+      "size": 562,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/serp-api.md",
+      "title": "SerpAPI Tool",
+      "size": 608,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/serp-search.md",
+      "title": "Untitled",
+      "size": 826,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/tavily-search.md",
+      "title": "TavilySearch Tool",
+      "size": 847,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/wikipedia-search.md",
+      "title": "Wikipedia Search Tool",
+      "size": 624,
+      "category": "tools"
+    },
+    {
+      "path": "tools/external/you-search.md",
+      "title": "YouSearchAPI Tool",
+      "size": 595,
+      "category": "tools"
+    },
+    {
+      "path": "tools/file_tools.md",
+      "title": "File Agent",
+      "size": 7271,
+      "category": "tools"
+    },
+    {
+      "path": "tools/gemini-internal-tools.md",
+      "title": "Gemini Internal Tools",
+      "size": 6340,
+      "category": "tools"
+    },
+    {
+      "path": "tools/googlecalendar.md",
+      "title": "Google Calendar Tools",
+      "size": 7715,
+      "category": "tools"
+    },
+    {
+      "path": "tools/gpt.md",
+      "title": "PraisonAI Tools Creator GPT",
+      "size": 147,
+      "category": "tools"
+    },
+    {
+      "path": "tools/json_tools.md",
+      "title": "JSON Agent",
+      "size": 8953,
+      "category": "tools"
+    },
+    {
+      "path": "tools/langchain.md",
+      "title": "Langchain Tools",
+      "size": 1842,
+      "category": "tools"
+    },
+    {
+      "path": "tools/langchain_tools.md",
+      "title": "LangChain Agent",
+      "size": 1416,
+      "category": "tools"
+    },
+    {
+      "path": "tools/mem0.md",
+      "title": "Mem0 and PaisonAI Integration",
+      "size": 2388,
+      "category": "tools"
+    },
+    {
+      "path": "tools/newspaper_tools.md",
+      "title": "Newspaper Agent",
+      "size": 7366,
+      "category": "tools"
+    },
+    {
+      "path": "tools/pandas_tools.md",
+      "title": "Pandas Agent",
+      "size": 8652,
+      "category": "tools"
+    },
+    {
+      "path": "tools/python_tools.md",
+      "title": "Python Agent",
+      "size": 7437,
+      "category": "tools"
+    },
+    {
+      "path": "tools/reddit.md",
+      "title": "Reddit PraisonAI Integration",
+      "size": 1713,
+      "category": "tools"
+    },
+    {
+      "path": "tools/searxng.md",
+      "title": "SearxNG Search Tool",
+      "size": 10507,
+      "category": "tools"
+    },
+    {
+      "path": "tools/shell_tools.md",
+      "title": "Shell Agent",
+      "size": 7174,
+      "category": "tools"
+    },
+    {
+      "path": "tools/spider_tools.md",
+      "title": "Spider Agent",
+      "size": 2525,
+      "category": "tools"
+    },
+    {
+      "path": "tools/tavily.md",
+      "title": "Tavily Search Integration",
+      "size": 3680,
+      "category": "tools"
+    },
+    {
+      "path": "tools/tools.md",
+      "title": "AI Agents with Tools",
+      "size": 1480,
+      "category": "tools"
+    },
+    {
+      "path": "tools/tools_class.md",
+      "title": "Tools as Class",
+      "size": 1259,
+      "category": "tools"
+    },
+    {
+      "path": "tools/trafilatura.md",
+      "title": "Trafilatura Web Extraction Tool",
+      "size": 12581,
+      "category": "tools"
+    },
+    {
+      "path": "tools/wikipedia.md",
+      "title": "Wikipedia PraisonAI Integration",
+      "size": 1140,
+      "category": "tools"
+    },
+    {
+      "path": "tools/wikipedia_tools.md",
+      "title": "Wikipedia Agent",
+      "size": 2598,
+      "category": "tools"
+    },
+    {
+      "path": "tools/xml_tools.md",
+      "title": "XML Agent",
+      "size": 2598,
+      "category": "tools"
+    },
+    {
+      "path": "tools/yaml_tools.md",
+      "title": "YAML Agent",
+      "size": 2576,
+      "category": "tools"
+    },
+    {
+      "path": "tools/yfinance_tools.md",
+      "title": "YFinance Agent",
+      "size": 2552,
+      "category": "tools"
+    },
+    {
+      "path": "tools/you.com.md",
+      "title": "You.com PraisonAI Integration",
+      "size": 923,
+      "category": "tools"
+    },
+    {
+      "path": "tools/youtube.md",
+      "title": "YouTube Search PraisonAI Integration",
+      "size": 681,
+      "category": "tools"
+    },
+    {
+      "path": "tools.md",
+      "title": "Tools",
+      "size": 904,
+      "category": "root"
+    },
+    {
+      "path": "train.md",
+      "title": "PraisonAI Train",
+      "size": 2360,
+      "category": "root"
+    },
+    {
+      "path": "tutorials/advanced-tool-development.md",
+      "title": "Advanced Tool Development",
+      "size": 21882,
+      "category": "tutorials"
+    },
+    {
+      "path": "tutorials/production-deployment.md",
+      "title": "Production Deployment Guide",
+      "size": 11540,
+      "category": "tutorials"
+    },
+    {
+      "path": "tutorials/testing-agents.md",
+      "title": "Testing Agents Guide",
+      "size": 19233,
+      "category": "tutorials"
+    },
+    {
+      "path": "ui/chat.md",
+      "title": "PraisonAI Chat",
+      "size": 4843,
+      "category": "ui"
+    },
+    {
+      "path": "ui/code.md",
+      "title": "PraisonAI Code",
+      "size": 5927,
+      "category": "ui"
+    },
+    {
+      "path": "ui/gradio.md",
+      "title": "Gradio Agent",
+      "size": 1599,
+      "category": "ui"
+    },
+    {
+      "path": "ui/overview.md",
+      "title": "User Interfaces",
+      "size": 1120,
+      "category": "ui"
+    },
+    {
+      "path": "ui/realtime.md",
+      "title": "Realtime Voice Interface",
+      "size": 2275,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/code-analysis-streamlit.md",
+      "title": "Code Analysis Agent UI",
+      "size": 1466,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/deepseek-streamlit.md",
+      "title": "Deepseek Streamlit UI",
+      "size": 1976,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/gemini-streamlit.md",
+      "title": "Gemini Streamlit UI",
+      "size": 1247,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/hackathon-judge-streamlit.md",
+      "title": "Hackathon Judge Agent UI",
+      "size": 1438,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/mcp-streamlit.md",
+      "title": "MCP with Streamlit",
+      "size": 7196,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit/ollama-streamlit.md",
+      "title": "Ollama Streamlit UI",
+      "size": 1980,
+      "category": "ui"
+    },
+    {
+      "path": "ui/streamlit.md",
+      "title": "Streamlit Agent",
+      "size": 1564,
+      "category": "ui"
+    },
+    {
+      "path": "ui/ui.md",
+      "title": "User Interface",
+      "size": 1509,
+      "category": "ui"
+    }
+  ],
+  "categories": {
+    "agents": {
+      "count": 18,
+      "totalSize": 40610
+    },
+    "api": {
+      "count": 17,
+      "totalSize": 139154
+    },
+    "api-reference": {
+      "count": 1,
+      "totalSize": 1057
+    },
+    "root": {
+      "count": 14,
+      "totalSize": 27592
+    },
+    "best-practices": {
+      "count": 11,
+      "totalSize": 205343
+    },
+    "concepts": {
+      "count": 12,
+      "totalSize": 65684
+    },
+    "configuration": {
+      "count": 9,
+      "totalSize": 65028
+    },
+    "course": {
+      "count": 20,
+      "totalSize": 82029
+    },
+    "deploy": {
+      "count": 6,
+      "totalSize": 31688
+    },
+    "developers": {
+      "count": 6,
+      "totalSize": 30390
+    },
+    "examples": {
+      "count": 21,
+      "totalSize": 23051
+    },
+    "features": {
+      "count": 49,
+      "totalSize": 238195
+    },
+    "framework": {
+      "count": 3,
+      "totalSize": 6112
+    },
+    "js": {
+      "count": 6,
+      "totalSize": 5721
+    },
+    "mcp": {
+      "count": 36,
+      "totalSize": 40104
+    },
+    "models": {
+      "count": 11,
+      "totalSize": 18212
+    },
+    "monitoring": {
+      "count": 2,
+      "totalSize": 14939
+    },
+    "nocode": {
+      "count": 6,
+      "totalSize": 4337
+    },
+    "tools": {
+      "count": 54,
+      "totalSize": 182332
+    },
+    "tutorials": {
+      "count": 3,
+      "totalSize": 52655
+    },
+    "ui": {
+      "count": 13,
+      "totalSize": 34140
+    }
+  }
+}

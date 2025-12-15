@@ -1,0 +1,297 @@
+# DuckDB Agent
+
+## DuckDB Tools
+
+Use DuckDB Tools to manage and query databases with AI agents.
+
+## Available Functions
+
+```python
+from praisonaiagents.tools import execute_query
+from praisonaiagents.tools import load_csv
+from praisonaiagents.tools import export_csv
+```
+
+## Function Details
+
+### execute_query(query: str, params: Optional[Union[tuple, dict]] = None, return_df: bool = True)
+
+Executes SQL queries with advanced features:
+- Supports parameterized queries
+- Returns results as DataFrame records or raw tuples
+- Full SQL query support (SELECT, INSERT, UPDATE, DELETE, etc.)
+- Automatic connection management
+
+```python
+# Basic SELECT query
+
+results = execute_query("SELECT * FROM employees")
+
+# Parameterized query
+
+results = execute_query(
+ "SELECT * FROM employees WHERE department = ? AND salary > ?",
+ params=('Engineering', 75000)
+)
+
+# Named parameters
+
+results = execute_query(
+ "SELECT * FROM employees WHERE department = :dept",
+
+)
+# Returns: List[Dict[str, Any]]
+
+# Example: [{"id": 1, "name": "Alice", "department": "Engineering"}, ...]
+
+```
+
+### load_csv(table_name: str, filepath: str, schema: Optional[Dict[str, str]] = None, if_exists: str = 'replace')
+
+Loads CSV files into DuckDB tables:
+- Optional schema definition
+- Flexible table existence handling
+- Automatic type inference
+- Support for large files
+
+```python
+# Basic usage - auto schema inference
+
+success = load_csv("employees", "employees.csv")
+
+# With custom schema
+
+schema = {
+ "id": "INTEGER PRIMARY KEY",
+ "name": "VARCHAR",
+ "salary": "DECIMAL(10,2)",
+ "hire_date": "DATE"
+}
+success = load_csv(
+ "employees",
+ "employees.csv",
+ schema=schema,
+ if_exists='replace'
+)
+# Returns: bool (True if successful)
+
+```
+
+### export_csv(query: str, filepath: str, params: Optional[Union[tuple, dict]] = None)
+
+Exports query results to CSV files:
+- Supports parameterized queries
+- Automatic header generation
+- Configurable output formatting
+- Large result set handling
+
+```python
+# Export simple query results
+
+success = export_csv(
+ "SELECT * FROM employees",
+ "exported_employees.csv"
+)
+
+# Export filtered data with parameters
+
+success = export_csv(
+ "SELECT * FROM employees WHERE department = ? AND year = ?",
+ "eng_2023.csv",
+ params=('Engineering', 2023)
+)
+# Returns: bool (True if successful)
+
+```
+
+## Understanding DuckDB Tools
+
+## Key Components
+
+## Examples
+
+### Basic Database Agent
+
+```python
+from praisonaiagents import Agent, Task, PraisonAIAgents
+from praisonaiagents.tools import execute_query, load_csv, export_csv
+
+# Create database agent
+
+db_agent = Agent(
+ name="DBExpert",
+ role="Database Specialist",
+ goal="Query and analyze data efficiently.",
+ backstory="Expert in database management and SQL.",
+ tools=[execute_query, load_csv, export_csv],
+ self_reflect=False
+)
+
+# Define database task
+
+db_task = Task(
+ description="Analyze sales performance data.",
+ expected_output="Sales analysis report.",
+ agent=db_agent,
+ name="sales_analysis"
+)
+
+# Run agent
+
+agents = PraisonAIAgents(
+ agents=[db_agent],
+ tasks=[db_task],
+ process="sequential"
+)
+agents.start()
+```
+
+### Advanced Database Operations with Multiple Agents
+
+```python
+# Create query agent
+
+query_agent = Agent(
+ name="QueryProcessor",
+ role="SQL Query Specialist",
+ goal="Execute SQL queries efficiently.",
+ tools=[execute_query],
+ self_reflect=False
+)
+
+# Create data import/export agent
+
+data_agent = Agent(
+ name="DataProcessor",
+ role="Data Import/Export Specialist",
+ goal="Handle data import and export operations efficiently.",
+ tools=[load_csv, export_csv],
+ self_reflect=False
+)
+```
+
+## Dependencies
+
+The DuckDB tools require the following Python packages:
+- duckdb: For database operations
+- pandas: For data manipulation and CSV handling
+
+These will be automatically installed when needed.
+
+## Example Agent Configuration
+
+```python
+from praisonaiagents import Agent
+from praisonaiagents.tools import execute_query, load_csv, export_csv
+
+agent = Agent(
+ name="DBProcessor",
+ description="An agent that works with DuckDB databases",
+ tools=[execute_query, load_csv, export_csv]
+)
+```
+
+## Error Handling
+
+All functions include comprehensive error handling:
+- Database connection errors
+- Query syntax errors
+- File I/O errors
+- Schema validation errors
+- Missing dependency errors
+
+Errors are logged and returned in a consistent format:
+- Success cases return the expected data type
+- Error cases return a dict with an "error" key containing the error message
+
+## Common Use Cases
+
+1. Data Analysis:
+```python
+# Load data
+
+load_csv("sales", "sales_data.csv")
+
+# Analyze with SQL
+
+results = execute_query("""
+ SELECT
+ department,
+ COUNT(*) as count,
+ AVG(salary) as avg_salary
+ FROM employees
+ GROUP BY department
+ HAVING count > 5
+ ORDER BY avg_salary DESC
+""")
+```
+2. Data Export:
+```python
+# Export filtered and aggregated data
+
+export_csv("""
+ SELECT
+ date_trunc('month', date) as month,
+ SUM(amount) as total_sales
+ FROM sales
+ GROUP BY 1
+ ORDER BY 1
+""", "monthly_sales.csv")
+```
+3. Data Transformation:
+```python
+# Load and transform data
+
+load_csv("raw_data", "input.csv")
+execute_query("""
+ CREATE TABLE transformed AS
+ SELECT
+ id,
+ UPPER(name) as name,
+ ROUND(amount, 2) as amount,
+ DATE_TRUNC('day', timestamp) as date
+ FROM raw_data
+""")
+export_csv("SELECT * FROM transformed", "transformed.csv")
+```
+
+## Best Practices
+
+## Common Patterns
+
+### Database Operation Pipeline
+
+```python
+# Query agent
+
+querier = Agent(
+ name="Querier",
+ role="SQL Specialist",
+ tools=[execute_query]
+)
+
+# Analysis agent
+
+analyzer = Agent(
+ name="Analyzer",
+ role="Data Analyst"
+)
+
+# Define tasks
+
+query_task = Task(
+ description="Execute SQL queries",
+ agent=querier
+)
+
+analyze_task = Task(
+ description="Analyze query results",
+ agent=analyzer
+)
+
+# Run workflow
+
+agents = PraisonAIAgents(
+ agents=[querier, analyzer],
+ tasks=[query_task, analyze_task]
+)

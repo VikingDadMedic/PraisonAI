@@ -1,0 +1,684 @@
+# Chain-of-Thought Tools
+
+The Chain-of-Thought (CoT) tools enable AI agents to generate step-by-step reasoning paths for problem-solving and create synthetic reasoning data for training purposes. These tools help break down complex problems into manageable steps and document the reasoning process.
+
+## Overview
+
+Chain-of-Thought reasoning is a technique where AI models explicitly show their step-by-step thinking process when solving problems. This approach improves accuracy, provides transparency, and generates valuable training data for improving AI models.
+
+## Installation
+
+The Chain-of-Thought tools require the following dependencies:
+
+```bash
+pip install pandas pydantic huggingface-hub
+```
+
+## Core Functions
+
+### `cot_save`
+
+Saves chain-of-thought solutions to a CSV file for further analysis or training data generation.
+
+```python
+from praisonaiagents.tools import cot_save
+
+# Save reasoning data
+
+cot_save(
+ input_data="Solve: If a train travels 120 miles in 2 hours, what is its average speed?",
+ ,
+ filename="reasoning_examples.csv"
+)
+```
+
+### `cot_upload_to_huggingface`
+
+Uploads your chain-of-thought dataset to Hugging Face Hub for sharing or model training.
+
+```python
+from praisonaiagents.tools import cot_upload_to_huggingface
+
+# Upload dataset to Hugging Face
+
+result = cot_upload_to_huggingface(
+ dataset_path="reasoning_examples.csv",
+ dataset_name="my-cot-dataset",
+ token="your-huggingface-token"
+)
+```
+
+## Usage Examples
+
+### Basic Chain-of-Thought Generation
+
+```python
+from praisonaiagents import Agent, Task
+from praisonaiagents.tools import cot_save
+
+# Create a reasoning agent
+
+reasoning_agent = Agent(
+ name="Reasoning Agent",
+ instructions="""You are an expert at breaking down complex problems into steps.
+ For each problem, provide:
+1. Problem understanding
+2. Step-by-step solution
+3. Final answer
+4. Verification""",
+ tools=[cot_save]
+)
+
+# Create a task
+
+task = Task(
+ description="Solve this problem step-by-step: A bakery sells 120 cookies per day. If they're open 6 days a week, how many cookies do they sell in 4 weeks?",
+ agent=reasoning_agent
+)
+
+# Execute and save reasoning
+
+result = task.execute()
+```
+
+### Structured Reasoning with Pydantic Models
+
+```python
+from pydantic import BaseModel, Field
+from typing import List
+from praisonaiagents.tools import cot_save
+
+class ReasoningStep(BaseModel):
+ step_number: int = Field(description="Step number in the reasoning process")
+ description: str = Field(description="What this step accomplishes")
+ calculation: str = Field(description="Any calculations performed")
+ result: str = Field(description="Result of this step")
+
+class ChainOfThought(BaseModel):
+ problem: str = Field(description="The original problem statement")
+ steps: List[ReasoningStep] = Field(description="List of reasoning steps")
+ final_answer: str = Field(description="The final answer")
+ confidence: float = Field(description="Confidence level (0-1)")
+
+# Example usage
+
+cot_example = ChainOfThought(
+ problem="Calculate compound interest for $1000 at 5% for 3 years",
+ steps=[
+ ReasoningStep(
+ step_number=1,
+ description="Identify the compound interest formula",
+ calculation="A = P(1 + r)^t",
+ result="Formula identified"
+ ),
+ ReasoningStep(
+ step_number=2,
+ description="Substitute values",
+ calculation="A = 1000(1 + 0.05)^3",
+ result="Values substituted"
+ ),
+ ReasoningStep(
+ step_number=3,
+ description="Calculate the result",
+ calculation="A = 1000(1.05)^3 = 1000 × 1.157625 = 1157.63",
+ result="$1,157.63"
+ )
+ ],
+ final_answer="$1,157.63",
+ confidence=0.95
+)
+
+# Save structured reasoning
+
+cot_save(
+ input_data=cot_example.problem,
+ output_data=cot_example.model_dump(),
+ filename="structured_reasoning.csv"
+)
+```
+
+### Multi-Agent Reasoning System
+
+```python
+from praisonaiagents import Agent, Task, Process
+from praisonaiagents.tools import cot_save, cot_upload_to_huggingface
+
+# Problem decomposer agent
+
+decomposer = Agent(
+ name="Problem Decomposer",
+ instructions="Break down complex problems into smaller sub-problems",
+ tools=[cot_save]
+)
+
+# Step solver agent
+
+solver = Agent(
+ name="Step Solver",
+ instructions="Solve each sub-problem step by step",
+ tools=[cot_save]
+)
+
+# Verifier agent
+
+verifier = Agent(
+ name="Solution Verifier",
+ instructions="Verify the solution and check for errors",
+ tools=[cot_save]
+)
+
+# Tasks
+
+decompose_task = Task(
+ description="Break down: How many different 5-card poker hands contain exactly 3 aces?",
+ agent=decomposer
+)
+
+solve_task = Task(
+ description="Solve each sub-problem identified",
+ agent=solver
+)
+
+verify_task = Task(
+ description="Verify the solution using a different approach",
+ agent=verifier
+)
+
+# Process
+
+reasoning_process = Process(
+ agents=[decomposer, solver, verifier],
+ tasks=[decompose_task, solve_task, verify_task]
+)
+
+result = reasoning_process.run()
+```
+
+## Configuration
+
+### Environment Variables
+
+```python
+import os
+
+# Hugging Face configuration
+
+os.environ['HUGGINGFACE_TOKEN'] = 'your-token-here'
+os.environ['HUGGINGFACE_ORGANIZATION'] = 'your-org-name'
+
+# Default save directory
+
+os.environ['COT_DATA_DIR'] = '/path/to/cot/data'
+
+# CSV formatting options
+
+os.environ['COT_CSV_DELIMITER'] = ','
+os.environ['COT_CSV_ENCODING'] = 'utf-8'
+```
+
+### Custom Configuration
+
+```python
+# Configure CSV output format
+
+def save_cot_with_metadata(input_data, output_data, metadata=None):
+ import pandas as pd
+ from datetime import datetime
+ import os
+
+ # Add metadata
+
+ entry = {
+ 'timestamp': datetime.now().isoformat(),
+ 'input': input_data,
+ 'output': output_data,
+ 'model': metadata.get('model', 'unknown'),
+ 'temperature': metadata.get('temperature', 0.7),
+ 'reasoning_type': metadata.get('type', 'general')
+ }
+
+ # Save to CSV with custom formatting
+
+ df = pd.DataFrame([entry])
+ df.to_csv(
+ 'cot_data_with_metadata.csv',
+ mode='a',
+ header=not os.path.exists('cot_data_with_metadata.csv'),
+ index=False
+ )
+```
+
+## Advanced Features
+
+### Batch Processing
+
+```python
+from praisonaiagents.tools import cot_save
+import pandas as pd
+
+# Process multiple problems in batch
+
+problems = [
+ "Calculate 15% of 240",
+ "Find the area of a circle with radius 7",
+ "Convert 72°F to Celsius"
+]
+
+for problem in problems:
+ # Generate reasoning for each problem
+
+ reasoning_steps = generate_reasoning(problem) # Your reasoning function
+
+ # Save each solution
+
+ cot_save(
+ input_data=problem,
+ output_data=reasoning_steps,
+ filename="batch_reasoning.csv"
+ )
+
+# Upload complete dataset
+
+cot_upload_to_huggingface(
+ dataset_path="batch_reasoning.csv",
+ dataset_name="math-reasoning-dataset"
+)
+```
+
+### Quality Metrics
+
+```python
+# Analyze reasoning quality
+
+def analyze_reasoning_quality(csv_path):
+ import ast
+ df = pd.read_csv(csv_path)
+
+ metrics = {
+ 'total_examples': len(df),
+ 'avg_steps': df['output'].apply(lambda x: len(ast.literal_eval(x).get('steps', []))).mean(),
+ 'completeness': (df['output'].notna().sum() / len(df)) * 100,
+ 'unique_patterns': df['input'].nunique()
+ }
+
+ return metrics
+
+# Check quality before uploading
+
+quality = analyze_reasoning_quality("reasoning_examples.csv")
+print(f"Dataset quality metrics: {quality}")
+```
+
+### Integration with Training Pipelines
+
+```python
+# Prepare data for model training
+
+def prepare_for_training(csv_path, output_format='jsonl'):
+ df = pd.read_csv(csv_path)
+
+ training_data = []
+ for _, row in df.iterrows():
+ entry = {
+ 'instruction': row['input'],
+ 'reasoning': row['output'],
+ 'model_type': 'chain-of-thought'
+ }
+ training_data.append(entry)
+
+ # Save in training format
+
+ if output_format == 'jsonl':
+ import json
+ with open('training_data.jsonl', 'w') as f:
+ for item in training_data:
+ f.write(json.dumps(item) + '\n')
+
+ return training_data
+```
+
+## GenerateCOT Class - Advanced Training Data Generation
+
+The `GenerateCOT` class provides specialized functionality for generating Chain-of-Thought training data from question-answer pairs.
+
+### Basic Usage
+
+```python
+from praisonaiagents.tools.train.data.generatecot import GenerateCOT
+
+# Define Q&A pairs
+
+qa_pairs = {
+ "What is 15% of 80?": "12",
+ "If a car travels 60 mph for 2.5 hours, how far does it go?": "150 miles",
+ "What is the area of a rectangle with length 8 and width 5?": "40"
+}
+
+# Initialize GenerateCOT
+
+cot_gen = GenerateCOT(
+ qa_pairs=qa_pairs,
+ model="gpt-4o-mini",
+ temperature=0.7,
+ max_attempts=3,
+ verbose=True
+)
+
+# Generate solutions for each question
+
+for question in qa_pairs:
+ # Generate solution with thought process
+
+ solution_dict = cot_gen.cot_run_dict(question)
+ print(f"Question: {question}")
+ print(f"Thought Process: {solution_dict.get('thought_process')}")
+ print(f"Final Answer: {solution_dict.get('final_answer')}")
+ print("-" * 50)
+```
+
+### Class Methods
+
+#### Initialize GenerateCOT
+
+```python
+GenerateCOT(
+ qa_pairs: Optional[Dict[str, str]] = None, # Question-answer pairs
+
+ model: str = "gpt-4o-mini", # LLM model to use
+
+ api_key: Optional[str] = None, # OpenAI API key
+
+ max_attempts: int = 3, # Max generation attempts
+
+ verbose: bool = True, # Show progress
+
+ temperature: float = 0.5 # Generation temperature
+
+)
+```
+
+#### Core Methods
+
+1. **`cot_run(question: str) -> str`** - Generate solution as string
+2. **`cot_run_dict(question: str) -> dict`** - Generate solution with structured output
+3. **`cot_generate(question: str, context: str = "") -> str`** - Generate with context
+4. **`cot_generate_dict(question: str, context: str = "") -> dict`** - Generate structured with context
+5. **`cot_check(question: str, answer: str) -> bool`** - Verify if answer is correct
+6. **`cot_find_error(question: str, current: str) -> str`** - Find errors in solution
+7. **`cot_improve(question: str, current: str) -> str`** - Improve existing solution
+
+### Export Methods
+
+```python
+# Export to JSON with Q&A pairs
+
+cot_gen.cot_export_json_with_qa_pairs(
+ filepath='cot_dataset.json',
+ save_to_file=True
+)
+
+# Export to CSV
+
+cot_gen.cot_export_csv_with_qa_pairs(
+ filepath='cot_dataset.csv'
+)
+
+# Save individual Q&A pair
+
+cot_gen.cot_save(
+ question="What is 2+2?",
+ answer="4",
+ filepath="additional_qa.csv"
+)
+```
+
+### Complete Example: Math Training Data
+
+```python
+from praisonaiagents.tools.train.data.generatecot import GenerateCOT
+
+# Define math problems with answers
+
+math_problems = {
+ "A store offers a 20% discount on a $50 item. What is the final price?": "$40",
+ "If 3x + 7 = 22, what is x?": "5",
+ "A triangle has sides 3, 4, and 5. Is it a right triangle?": "Yes",
+ "What is the compound interest on $1000 at 5% for 2 years?": "$102.50",
+ "How many ways can you arrange 4 different books on a shelf?": "24"
+}
+
+# Initialize generator
+
+cot_gen = GenerateCOT(
+ qa_pairs=math_problems,
+ model="gpt-4o-mini",
+ temperature=0.7,
+ verbose=True
+)
+
+# Generate solutions
+
+print("Generating Chain-of-Thought solutions...")
+for question, expected_answer in math_problems.items():
+ # Generate solution
+
+ solution = cot_gen.cot_run_dict(question)
+
+ # Check correctness
+
+ is_correct = cot_gen.cot_check(question, expected_answer)
+
+ # If incorrect, find error and improve
+
+ if not is_correct:
+ error = cot_gen.cot_find_error(question, solution['thought_process'])
+ improved = cot_gen.cot_improve(question, solution['thought_process'])
+ print(f"Error found: {error}")
+ print(f"Improved solution generated")
+
+# Export dataset
+
+cot_gen.cot_export_json_with_qa_pairs("math_cot_training.json")
+cot_gen.cot_export_csv_with_qa_pairs("math_cot_training.csv")
+
+# Upload to HuggingFace (optional)
+
+cot_gen.cot_upload_to_huggingface(
+ repo_name="my-math-cot-dataset",
+ token="your-hf-token"
+)
+```
+
+### Working with Different Question Types
+
+```python
+# Multiple choice questions
+
+mc_questions = {
+ "Which planet is closest to the sun? A) Venus B) Mercury C) Earth D) Mars": "B) Mercury",
+ "What is the chemical symbol for gold? A) Go B) Gd C) Au D) Ag": "C) Au"
+}
+
+# Word problems
+
+word_problems = {
+ "John has 5 apples. He gives 2 to Mary and buys 3 more. How many does he have now?": "6",
+ "A train leaves at 2:00 PM traveling 60 mph. When will it reach a station 150 miles away?": "4:30 PM"
+}
+
+# Code-related questions
+
+code_questions = {
+ "What does list.append() return in Python?": "None",
+ "What is the time complexity of binary search?": "O(log n)"
+}
+
+# Create specialized generators for each type
+
+mc_gen = GenerateCOT(qa_pairs=mc_questions, temperature=0.3)
+word_gen = GenerateCOT(qa_pairs=word_problems, temperature=0.7)
+code_gen = GenerateCOT(qa_pairs=code_questions, temperature=0.5)
+```
+
+### Loading and Improving Existing Solutions
+
+```python
+# Load existing Q&A pairs from JSON
+
+existing_qa = cot_gen.cot_load_answers("existing_solutions.json")
+
+# Improve all solutions
+
+for question, answer in existing_qa.items():
+ if question in cot_gen.solutions:
+ current_solution = cot_gen.solutions[question]['thought_process']
+ improved = cot_gen.cot_improve(question, current_solution)
+ print(f"Improved solution for: {question}")
+```
+
+### Important Differences from Documentation Examples
+
+| Feature | Documentation Shows | Actual Implementation |
+|---------|-------------------|---------------------|
+| Initialization | `topic="Math"` | `` |
+| Generation | `cot_gen.generate()` | `cot_gen.cot_run(question)` |
+| Question creation | `num_questions=5` | Must provide Q&A pairs |
+| Improvement | `cot_improve("Make detailed")` | `cot_improve(question, current)` |
+
+### Integration with Agents
+
+```python
+from praisonaiagents import Agent, Task
+from praisonaiagents.tools.train.data.generatecot import GenerateCOT
+
+# Create Q&A pairs for agent to process
+
+qa_pairs = {
+ "Explain photosynthesis": "Process where plants convert light to energy",
+ "What causes seasons?": "Earth's tilted axis and orbit around the sun"
+}
+
+# Initialize COT generator
+
+cot_gen = GenerateCOT(qa_pairs=qa_pairs)
+
+# Create agent that uses COT generation
+
+cot_agent = Agent(
+ name="COT Generator",
+ role="Training data creator",
+ goal="Generate step-by-step reasoning for training",
+ instructions="Use the COT generator to create detailed solutions"
+)
+
+# Task to generate all solutions
+
+generate_task = Task(
+ description="Generate COT solutions for all Q&A pairs",
+ agent=cot_agent,
+ execute_function=lambda: [cot_gen.cot_run_dict(q) for q in qa_pairs.keys()]
+)
+
+# Execute
+
+result = generate_task.execute()
+```
+
+## Best Practices
+
+1. **Clear Problem Statements**: Always provide clear, unambiguous problem descriptions
+2. **Detailed Steps**: Include all intermediate steps, even seemingly obvious ones
+3. **Consistent Formatting**: Use consistent structure across all reasoning examples
+4. **Error Handling**: Include examples of common mistakes and their corrections
+5. **Diverse Examples**: Cover a wide range of problem types and difficulty levels
+6. **Verification Steps**: Always include a verification step to check the answer
+7. **Metadata**: Track model parameters and conditions for each example
+8. **Q&A Preparation**: Prepare comprehensive Q&A pairs before using GenerateCOT
+9. **Temperature Tuning**: Use lower temperature (0.3-0.5) for factual content, higher (0.7-0.9) for creative solutions
+
+## Common Use Cases
+
+### Educational Content Generation
+
+```python
+# Generate step-by-step solutions for educational materials
+
+educational_agent = Agent(
+ name="Education Agent",
+ instructions="Create detailed, educational explanations suitable for students",
+ tools=[cot_save]
+)
+
+# Generate explanations for various topics
+
+topics = ["Pythagorean theorem", "Photosynthesis", "Supply and demand"]
+for topic in topics:
+ task = Task(
+ description=f"Explain {topic} with clear reasoning steps",
+ agent=educational_agent
+ )
+ task.execute()
+```
+
+### Debugging and Error Analysis
+
+```python
+# Use CoT for debugging code
+
+debugging_agent = Agent(
+ name="Debug Agent",
+ instructions="Analyze code errors step by step",
+ tools=[cot_save]
+)
+
+error_task = Task(
+ description="Debug: Why does 'list.append(x)' return None in Python?",
+ agent=debugging_agent
+)
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **CSV Encoding Errors**
+ ```python
+ # Fix encoding issues
+
+ cot_save(
+ input_data="Problem with special characters: café",
+ ,
+ filename="data.csv",
+ encoding='utf-8-sig' # Use for Excel compatibility
+
+ )
+ ```
+2. **Large Dataset Handling**
+ ```python
+ # Process large datasets in chunks
+
+ chunk_size = 1000
+ for i in range(0, len(data), chunk_size):
+ chunk = data[i:i+chunk_size]
+ process_chunk(chunk)
+ ```
+3. **Hugging Face Upload Failures**
+ ```python
+ # Retry logic for uploads
+
+ import time
+
+ max_retries = 3
+ for attempt in range(max_retries):
+ try:
+ cot_upload_to_huggingface(dataset_path, dataset_name)
+ break
+ except Exception as e:
+ if attempt < max_retries - 1:
+ time.sleep(2 ** attempt) # Exponential backoff
+
+ else:
+ raise
+ ```
+
+For more examples and integration patterns, see the [Generate Reasoning documentation](/docs/features/generate-reasoning).
